@@ -137,8 +137,6 @@ end;
 
 procedure TDataModuleMain.OnTraceEvent(const TraceEvent: TFBTraceEvent);
 begin
-  if TraceEvent.EventType in [etTraceInit, etTraceFini] then Exit;
-
   DsCurrTrace.Append;
   DsCurrTrace.FieldByName('Id').AsInteger := FEventCounter;
   DsCurrTrace.FieldByName('SessionId').AsInteger := TraceEvent.SessionId;

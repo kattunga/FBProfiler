@@ -147,50 +147,6 @@ msgstr ""
 msgid "Firebird profiler"
 msgstr ""
 
-#: tfrmmain.dbgtraces.columns[0].title.caption
-msgid "#"
-msgstr ""
-
-#: tfrmmain.dbgtraces.columns[10].title.caption
-msgid "Records"
-msgstr ""
-
-#: tfrmmain.dbgtraces.columns[1].title.caption
-msgid "Session"
-msgstr ""
-
-#: tfrmmain.dbgtraces.columns[2].title.caption
-msgid "Timestamp"
-msgstr ""
-
-#: tfrmmain.dbgtraces.columns[3].title.caption
-msgid "Event type"
-msgstr ""
-
-#: tfrmmain.dbgtraces.columns[4].title.caption
-msgid "Application"
-msgstr ""
-
-#: tfrmmain.dbgtraces.columns[5].title.caption
-msgid "Duration"
-msgstr ""
-
-#: tfrmmain.dbgtraces.columns[6].title.caption
-msgid "Reads"
-msgstr ""
-
-#: tfrmmain.dbgtraces.columns[7].title.caption
-msgid "Writes"
-msgstr ""
-
-#: tfrmmain.dbgtraces.columns[8].title.caption
-msgid "Fetches"
-msgstr ""
-
-#: tfrmmain.dbgtraces.columns[9].title.caption
-msgid "Marks"
-msgstr ""
-
 #: tfrmmain.menuitem12.caption
 msgctxt "TFRMMAIN.MENUITEM12.CAPTION"
 msgid "-"

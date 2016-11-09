@@ -101,6 +101,7 @@ procedure TFrmEditTrace.SetConfig(Value: TTraceConfig);
 var
   i, Index: integer;
   Param: TTraceConfigParam;
+  Path, libPath: string;
 begin
   Assert(Value <> nil, 'Configuration provided is null');
   FConfig := Value;
@@ -117,6 +118,19 @@ begin
   EdtPassword.Text := FConfig.Password;
   EdtDatabaseFilter.Text := FConfig.DatabaseFilter;
   EdtConfValues.Strings.Clear;
+
+  if EdtLibPath.Text = '' then begin
+    Path := ExtractFilePath(ParamStr(0));
+    libPath := Path+'libfbclient.so.3.0.0';
+    if FileExists(libPath) then
+      EdtLibPath.Text := libPath;
+    libPath := Path+'libfbclient.so.2';
+    if FileExists(libPath) then
+      EdtLibPath.Text := libPath;
+    libPath := Path+'libfbclient.so';
+    if FileExists(libPath) then
+      EdtLibPath.Text := libPath;
+  end;
 
   for i := 0 to FConfig.Params.Count - 1 do
   begin

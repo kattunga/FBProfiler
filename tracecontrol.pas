@@ -191,22 +191,31 @@ begin
   FDatabaseFilter := '';
   FVersion := '3';
   FParams := TTraceConfigParams.Create;
-  FParams.Add(TTraceConfigParam.Create('log_transactions', 'true', ptBoolean));
-  FParams.Add(TTraceConfigParam.Create('log_connections', 'true', ptBoolean));
-  FParams.Add(TTraceConfigParam.Create('log_statement_prepare', 'true', ptBoolean));
-  FParams.Add(TTraceConfigParam.Create('log_statement_free', 'true', ptBoolean));
-  FParams.Add(TTraceConfigParam.Create('log_statement_start', 'true', ptBoolean));
-  FParams.Add(TTraceConfigParam.Create('log_statement_finish', 'true', ptBoolean));
+//  FParams.Add(TTraceConfigParam.Create('include_filter', '', ptString));
+//  FParams.Add(TTraceConfigParam.Create('exclude_filter', '', ptString));
+  FParams.Add(TTraceConfigParam.Create('log_connections', 'false', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('connection_id', '0', ptInteger));
+  FParams.Add(TTraceConfigParam.Create('log_transactions', 'false', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('log_statement_prepare', 'false', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('log_statement_free', 'false', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('log_statement_start', 'false', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('log_statement_finish', 'false', ptBoolean));
   FParams.Add(TTraceConfigParam.Create('log_procedure_start', 'false', ptBoolean));
   FParams.Add(TTraceConfigParam.Create('log_procedure_finish', 'false', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('log_function_start', 'false', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('log_function_finish', 'false', ptBoolean));
   FParams.Add(TTraceConfigParam.Create('log_trigger_start', 'false', ptBoolean));
   FParams.Add(TTraceConfigParam.Create('log_trigger_finish', 'false', ptBoolean));
-  FParams.Add(TTraceConfigParam.Create('log_blr_requests', 'true', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('log_context', 'false', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('log_errors', 'false', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('log_sweep', 'false', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('print_plan', 'true', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('explain_plan', 'true', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('print_perf', 'true', ptBoolean));
+  FParams.Add(TTraceConfigParam.Create('log_blr_requests', 'false', ptBoolean));
   FParams.Add(TTraceConfigParam.Create('print_blr', 'false', ptBoolean));
   FParams.Add(TTraceConfigParam.Create('log_dyn_requests', 'true', ptBoolean));
   FParams.Add(TTraceConfigParam.Create('print_dyn', 'false', ptBoolean));
-  FParams.Add(TTraceConfigParam.Create('print_perf', 'true', ptBoolean));
-  FParams.Add(TTraceConfigParam.Create('print_plan', 'true', ptBoolean));
   FParams.Add(TTraceConfigParam.Create('time_threshold', '0', ptInteger));
   {  <database>
     enabled=true
@@ -327,8 +336,24 @@ end;
 procedure TTraceSession.Start;
 var
   i: integer;
+  Path, libPath: string;
 begin
-  IBLibaryPath := FConfig.LibPath;
+
+  if FConfig.LibPath = '' then
+    begin
+      Path := ExtractFilePath(ParamStr(0));
+      libPath := Path+'libfbclient.so.3.0.0';
+      if FileExists(libPath) then
+        IBLibaryPath := libPath;
+      libPath := Path+'libfbclient.so.2';
+      if FileExists(libPath) then
+        IBLibaryPath := libPath;
+      libPath := Path+'libfbclient.so';
+      if FileExists(libPath) then
+        IBLibaryPath := libPath;
+    end
+  else
+    IBLibaryPath := FConfig.LibPath;
 
   if (FTraceService = nil) and not Active then
   begin

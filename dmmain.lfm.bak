@@ -5,7 +5,7 @@ object DataModuleMain: TDataModuleMain
   HorizontalOffset = 379
   VerticalOffset = 253
   Width = 435
-  object SrcCurrTrace: TDataSource
+  object SrcCurrTrace: TDatasource
     DataSet = DsCurrTrace
     left = 56
     top = 32

@@ -1,5 +1,5 @@
 object FrmMain: TFrmMain
-  Left = 452
+  Left = 406
   Height = 633
   Top = 168
   Width = 1024
@@ -71,7 +71,7 @@ object FrmMain: TFrmMain
   object StatusBarMain: TStatusBar
     Left = 0
     Height = 21
-    Top = 289
+    Top = 329
     Width = 1024
     Panels = <    
       item
@@ -86,7 +86,7 @@ object FrmMain: TFrmMain
     Cursor = crVSplit
     Left = 0
     Height = 5
-    Top = 284
+    Top = 324
     Width = 1024
     Align = alBottom
     Beveled = True
@@ -94,17 +94,17 @@ object FrmMain: TFrmMain
   end
   object PanelDetails: TPanel
     Left = 0
-    Height = 300
-    Top = 310
+    Height = 260
+    Top = 350
     Width = 1024
     Align = alBottom
     BevelOuter = bvNone
-    ClientHeight = 300
+    ClientHeight = 260
     ClientWidth = 1024
     TabOrder = 2
     object TabsDetails: TPageControl
       Left = 0
-      Height = 300
+      Height = 260
       Top = 0
       Width = 1024
       ActivePage = TabSQL
@@ -115,11 +115,11 @@ object FrmMain: TFrmMain
       TabPosition = tpBottom
       object TabSQL: TTabSheet
         Caption = 'SQL'
-        ClientHeight = 269
+        ClientHeight = 229
         ClientWidth = 1020
         object DBMemoSQL: TDBMemo
           Left = 0
-          Height = 269
+          Height = 229
           Top = 0
           Width = 1020
           Align = alClient
@@ -132,7 +132,7 @@ object FrmMain: TFrmMain
       end
       object TabPlan: TTabSheet
         Caption = 'Plan'
-        ClientHeight = 269
+        ClientHeight = 229
         ClientWidth = 1020
         object DBMemoPlan: TDBMemo
           Left = 0
@@ -146,7 +146,7 @@ object FrmMain: TFrmMain
       end
       object TabRaw: TTabSheet
         Caption = 'Raw'
-        ClientHeight = 269
+        ClientHeight = 229
         ClientWidth = 1020
         object DBMemoRaw: TDBMemo
           Left = 0
@@ -163,17 +163,17 @@ object FrmMain: TFrmMain
   end
   object PanelList: TPanel
     Left = 0
-    Height = 254
+    Height = 294
     Top = 30
     Width = 1024
     Align = alClient
     BevelOuter = bvNone
-    ClientHeight = 254
+    ClientHeight = 294
     ClientWidth = 1024
     TabOrder = 4
     object DbgTraces: TDBGrid
       Left = 0
-      Height = 254
+      Height = 294
       Top = 0
       Width = 1024
       Align = alClient
