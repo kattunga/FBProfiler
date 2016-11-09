@@ -20,7 +20,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
       <RevisionNr Value="4"/>
-      <BuildNr Value="40"/>
+      <BuildNr Value="41"/>
       <StringTable LegalCopyright="(c) 2013 Bel Air Informatique" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="2">
