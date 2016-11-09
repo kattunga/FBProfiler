@@ -40,6 +40,8 @@ type
     BtnSaveConf: TBitBtn;
     BtnCancel: TBitBtn;
     BtnOK: TBitBtn;
+    EdtLibPath: TLabeledEdit;
+    edtVersion: TComboBox;
     EdtHost: TLabeledEdit;
     EdtUser: TLabeledEdit;
     EdtPassword: TLabeledEdit;
@@ -49,6 +51,7 @@ type
     EdtDatabaseFilter: TLabeledEdit;
     EdtTraceName: TLabeledEdit;
     DlgSaveConf: TSaveDialog;
+    Label2: TLabel;
     procedure BtnOKClick(Sender: TObject);
     procedure BtnSaveConfClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -104,6 +107,12 @@ begin
   EdtTraceName.Text := FConfig.TraceName;
   EdtHost.Text := FConfig.HostName;
   EdtPort.Value := FConfig.Port;
+  EdtLibPath.Text := FConfig.LibPath;
+  i := EdtVersion.Items.IndexOf(FConfig.Version);
+  if i >= 0 then
+    EdtVersion.ItemIndex := i
+  else
+    EdtVersion.ItemIndex := 0;
   EdtUser.Text := FConfig.UserName;
   EdtPassword.Text := FConfig.Password;
   EdtDatabaseFilter.Text := FConfig.DatabaseFilter;
@@ -136,6 +145,8 @@ begin
   FConfig.TraceName := EdtTraceName.Text;
   FConfig.HostName := EdtHost.Text;
   FConfig.Port := EdtPort.Value;
+  FConfig.LibPath := EdtLibPath.Text;
+  FConfig.Version := EdtVersion.Text;
   FConfig.UserName := EdtUser.Text;
   FConfig.Password := EdtPassword.Text;
   FConfig.DatabaseFilter := EdtDatabaseFilter.Text;

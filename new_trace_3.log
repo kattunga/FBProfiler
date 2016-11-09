@@ -1,0 +1,1220 @@
+ [2016-11-09 13:39:10.212 Info] Trace session ID 5 started
+
+ [2016-11-09 13:39:11.752 Info] 2016-11-09T13:39:10.4280 (25031:0x7f8c4cddd9c0) TRACE_INIT
+	SESSION_5 new_trace_3
+	
+
+2016-11-09T13:39:10.4390 (25031:0x7f8c4cddd9c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146636, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:10.4410 (25031:0x7f8c4cddd9c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146636, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21837:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+      0 ms
+
+2016-11-09T13:39:10.4420 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146636, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21837:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:10.4420 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146636, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21837:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+0 records fetched
+      0 ms, 7 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+ZMS_CLIE                                2                                                                      
+
+2016-11-09T13:39:10.4430 (25031:0x7f8c4cddd9c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21837:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:10.4430 (25031:0x7f8c4cddd9c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21837:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:10.4440 (25031:0x7f8c4cddd9c0) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146636, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      1 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:10.5020 (25031:0x7f8c4cde3440) TRACE_INIT
+	SESSION_5 new_trace_3
+	
+
+2016-11-09T13:39:10.5090 (25031:0x7f8c4cde3440) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146637, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:10.5110 (25031:0x7f8c4cde3440) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146637, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21838:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+      0 ms
+
+2016-11-09T13:39:10.5120 (25031:0x7f8c4cde3440) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21838:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+
+2016-11-09T13:39:10.5160 (25031:0x7f8c4cde3440) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146637, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      4 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:10.5180 (25031:0x7f8c4cde3440) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146638, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:10.5200 (25031:0x7f8c4cde3440) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146638, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21839:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+      0 ms
+
+2016-11-09T13:39:10.5210 (25031:0x7f8c4cde3440) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146638, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21839:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+
+param0 = varchar(10), "PROYECTOS"
+param1 = varchar(20), "SERVER-LTSP"
+param2 = integer, "<NULL>"
+param3 = integer, "2021"
+
+
+2016-11-09T13:39:10.5220 (25031:0x7f8c4cde3440) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146638, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21839:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+
+param0 = varchar(10), "PROYECTOS"
+param1 = varchar(20), "SERVER-LTSP"
+param2 = integer, "<NULL>"
+param3 = integer, "2021"
+
+0 records fetched
+      0 ms, 126 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+XXX_CLAV                                          6                                                            
+CCC_PROYECTOS                                    30                                                            
+RPT_MAQU                                          1                                                            
+
+2016-11-09T13:39:10.5220 (25031:0x7f8c4cde3440) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21839:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+
+2016-11-09T13:39:10.5230 (25031:0x7f8c4cde3440) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21839:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+
+2016-11-09T13:39:10.5270 (25031:0x7f8c4cde3440) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146638, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      4 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+
+ [2016-11-09 13:39:13.599 Info] 2016-11-09T13:39:11.5520 (25031:0x7f8c4cddd9c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146639, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:11.5530 (25031:0x7f8c4cddd9c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146639, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21840:
+-------------------------------------------------------------------------------
+SELECT COUNT(*) FROM ZMS_MENS WHERE FUSUHAS=17 AND FLEIDO='N'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (ZMS_MENS INDEX (ZMS_MENS_USUHAS))
+      0 ms
+
+2016-11-09T13:39:11.5540 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146639, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21840:
+-------------------------------------------------------------------------------
+SELECT COUNT(*) FROM ZMS_MENS WHERE FUSUHAS=17 AND FLEIDO='N'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (ZMS_MENS INDEX (ZMS_MENS_USUHAS))
+
+2016-11-09T13:39:11.5540 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146639, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21840:
+-------------------------------------------------------------------------------
+SELECT COUNT(*) FROM ZMS_MENS WHERE FUSUHAS=17 AND FLEIDO='N'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (ZMS_MENS INDEX (ZMS_MENS_USUHAS))
+1 records fetched
+      0 ms, 5 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+ZMS_MENS                                          1                                                            
+
+2016-11-09T13:39:11.5550 (25031:0x7f8c4cddd9c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21840:
+-------------------------------------------------------------------------------
+SELECT COUNT(*) FROM ZMS_MENS WHERE FUSUHAS=17 AND FLEIDO='N'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (ZMS_MENS INDEX (ZMS_MENS_USUHAS))
+
+2016-11-09T13:39:11.5550 (25031:0x7f8c4cddd9c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21840:
+-------------------------------------------------------------------------------
+SELECT COUNT(*) FROM ZMS_MENS WHERE FUSUHAS=17 AND FLEIDO='N'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (ZMS_MENS INDEX (ZMS_MENS_USUHAS))
+
+2016-11-09T13:39:11.5560 (25031:0x7f8c4cddd9c0) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146639, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:11.7170 (25031:0x7f8c4cddd9c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146640, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:11.7180 (25031:0x7f8c4cddd9c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146640, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21841:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SERVER-SIG' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+      0 ms
+
+2016-11-09T13:39:11.7200 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146640, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21841:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SERVER-SIG' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:11.7200 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146640, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21841:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SERVER-SIG' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+0 records fetched
+      0 ms, 7 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+ZMS_CLIE                                2                                                                      
+
+2016-11-09T13:39:11.7210 (25031:0x7f8c4cddd9c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21841:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SERVER-SIG' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:11.7210 (25031:0x7f8c4cddd9c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21841:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SERVER-SIG' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:11.7220 (25031:0x7f8c4cddd9c0) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146640, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      1 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:12.4380 (25031:0x7f8c4cddd9c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146641, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:12.4390 (25031:0x7f8c4cddd9c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146641, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21842:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+      0 ms
+
+2016-11-09T13:39:12.4400 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146641, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21842:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:12.4400 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146641, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21842:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+0 records fetched
+      0 ms, 7 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+ZMS_CLIE                                2                                                                      
+
+2016-11-09T13:39:12.4410 (25031:0x7f8c4cddd9c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21842:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:12.4410 (25031:0x7f8c4cddd9c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21842:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:12.4450 (25031:0x7f8c4cddd9c0) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146641, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      3 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:12.7120 (25031:0x7f8c4cddd9c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146642, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:12.7140 (25031:0x7f8c4cddd9c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146642, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21843:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+      0 ms
+
+2016-11-09T13:39:12.7150 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146642, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21843:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:12.7160 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146642, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21843:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+0 records fetched
+      0 ms, 7 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+ZMS_CLIE                                2                                                                      
+
+2016-11-09T13:39:12.7170 (25031:0x7f8c4cddd9c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21843:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:12.7170 (25031:0x7f8c4cddd9c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21843:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:12.7170 (25031:0x7f8c4cddd9c0) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146642, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+
+ [2016-11-09 13:39:14.037 Info] 2016-11-09T13:39:13.4880 (25031:0x7f8c4cde90c0) TRACE_INIT
+	SESSION_5 new_trace_3
+	
+
+2016-11-09T13:39:13.5070 (25031:0x7f8c4cde90c0) ATTACH_DATABASE
+	/pool/data/ticket.gdb (ATT_1660340, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55274)
+	/usr/sbin/apache2:2849
+
+2016-11-09T13:39:13.5140 (25031:0x7f8c4cde90c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1660340, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55274)
+	/usr/sbin/apache2:2849
+		(TRA_6146643, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:13.5290 (25031:0x7f8c4cde90c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1660340, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55274)
+	/usr/sbin/apache2:2849
+		(TRA_6146643, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21872:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_TRAER_SUBCATEGOS(1,251,120,null)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_TRAER_SUBCATEGOS NATU
+ [2016-11-09 13:39:15.235 Info] RAL)
+     12 ms
+
+2016-11-09T13:39:13.5300 (25031:0x7f8c4cde90c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1660340, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55274)
+	/usr/sbin/apache2:2849
+		(TRA_6146643, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21872:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_TRAER_SUBCATEGOS(1,251,120,null)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_TRAER_SUBCATEGOS NATURAL)
+
+2016-11-09T13:39:13.5830 (25031:0x7f8c4cde90c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1660340, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55274)
+	/usr/sbin/apache2:2849
+		(TRA_6146643, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21872:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_TRAER_SUBCATEGOS(1,251,120,null)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_TRAER_SUBCATEGOS NATURAL)
+15 records fetched
+     53 ms, 193 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+CRM_TBL_SCAT                           95                                                                      
+
+2016-11-09T13:39:13.5850 (25031:0x7f8c4cde90c0) COMMIT_RETAINING
+	/pool/data/ticket.gdb (ATT_1660340, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55274)
+	/usr/sbin/apache2:2849
+		(TRA_6146643, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms
+
+2016-11-09T13:39:13.5860 (25031:0x7f8c4cde90c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1660340, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55274)
+	/usr/sbin/apache2:2849
+
+Statement 21872:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_TRAER_SUBCATEGOS(1,251,120,null)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_TRAER_SUBCATEGOS NATURAL)
+
+2016-11-09T13:39:13.5860 (25031:0x7f8c4cde90c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1660340, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55274)
+	/usr/sbin/apache2:2849
+
+Statement 21872:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_TRAER_SUBCATEGOS(1,251,120,null)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_TRAER_SUBCATEGOS NATURAL)
+
+2016-11-09T13:39:13.5870 (25031:0x7f8c4cde90c0) ROLLBACK_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1660340, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55274)
+	/usr/sbin/apache2:2849
+		(TRA_6146643, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:13.5870 (25031:0x7f8c4cde90c0) DETACH_DATABASE
+	/pool/data/ticket.gdb (ATT_1660340, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55274)
+	/usr/sbin/apache2:2849
+
+2016-11-09T13:39:13.5880 (25031:0x7f8c4cde90c0) TRACE_FINI
+	SESSION_5 new_trace_3
+	
+
+2016-11-09T13:39:13.6450 (25031:0x7f8c4cde38c0) TRACE_INIT
+	SESSION_5 new_trace_3
+	
+
+2016-11-09T13:39:13.6460 (25031:0x7f8c4cde90c0) TRACE_INIT
+	SESSION_5 new_trace_3
+	
+
+2016-11-09T13:39:13.6740 (25031:0x7f8c4cde90c0) ATTACH_DATABASE
+	/pool/data/ticket.gdb (ATT_1660341, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55278)
+	/usr/sbin/apache2:3230
+
+2016-11-09T13:39:13.6830 (25031:0x7f8c4cde38c0) ATTACH_DATABASE
+	/pool/data/ticket.gdb (ATT_1660342, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55282)
+	/usr/sbin/apache2:2847
+
+2016-11-09T13:39:13.6830 (25031:0x7f8c4cde90c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1660341, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55278)
+	/usr/sbin/apache2:3230
+		(TRA_6146644, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:13.6910 (25031:0x7f8c4cde38c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1660342, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55282)
+	/usr/sbin/apache2:2847
+		(TRA_6146645, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:13.7110 (25031:0x7f8c4cde90c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1660341, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55278)
+	/usr/sbin/apache2:3230
+		(TRA_6146644, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21938:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_CMB_ETPREV(1,251,null,'130')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_CMB_ETPREV NATURAL)
+     19 ms
+
+2016-11-09T13:39:13.7120 (25031:0x7f8c4cde38c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1660342, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55282)
+	/usr/sbin/apache2:2847
+		(TRA_6146645, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21939:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_CMB_ETNEXT(1,251,null,'130')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_CMB_ETNEXT NATURAL)
+     12 ms
+
+2016-11-09T13:39:13.7140 (25031:0x7f8c4cde38c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1660342, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55282)
+	/usr/sbin/apache2:2847
+		(TRA_6146645, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21939:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_CMB_ETNEXT(1,251,null,'130')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_CMB_ETNEXT NATURAL)
+
+2016-11-09T13:39:13.7140 (25031:0x7f8c4cde90c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1660341, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55278)
+	/usr/sbin/apache2:3230
+		(TRA_6146644, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21938:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_CMB_ETPREV(1,251,null,'130')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_CMB_ETPREV NATURAL)
+
+2016-11-09T13:39:13.7180 (25031:0x7f8c4cde90c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1660341, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55278)
+	/usr/sbin/apache2:3230
+		(TRA_6146644, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21938:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_CMB_ETPREV(1,251,null,'130')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_CMB_ETPREV NATURAL)
+0 records fetched
+      0 ms, 11 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+CRM_TBL_SCAT                                      1                                                            
+CRM_ETP_CONF                                      1                                                            
+
+2016-11-09T13:39:13.7190 (25031:0x7f8c4cde90c0) COMMIT_RETAINING
+	/pool/data/ticket.gdb (ATT_1660341, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55278)
+	/usr/sbin/apache2:3230
+		(TRA_6146644, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms
+
+2016-11-09T13:39:13.7200 (25031:0x7f8c4cde90c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1660341, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55278)
+	/usr/sbin/apache2:3230
+
+Statement 21938:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_CMB_ETPREV(1,251,null,'130')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_CMB_ETPREV NATURAL)
+
+2016-11-09T13:39:13.7200 (25031:0x7f8c4cde90c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1660341, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55278)
+	/usr/sbin/apache2:3230
+
+Statement 21938:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_CMB_ETPREV(1,251,null,'130')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_CMB_ETPREV NATURAL)
+
+2016-11-09T13:39:13.7220 (25031:0x7f8c4cde90c0) ROLLBACK_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1660341, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55278)
+	/usr/sbin/apache2:3230
+		(TRA_6146644, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      1 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:13.7220 (25031:0x7f8c4cde38c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1660342, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55282)
+	/usr/sbin/apache2:2847
+		(TRA_6146645, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21939:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_CMB_ETNEXT(1,251,null,'130')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_CMB_ETNEXT NATURAL)
+1 records fetched
+      7 ms, 15 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+CRM_TBL_ETPA                                      1                                                            
+CRM_TBL_SCAT                                      1                                                            
+CRM_ETP_CONF                                      1                                                            
+
+2016-11-09T13:39:13.7220 (25031:0x7f8c4cde90c0) DETACH_DATABASE
+	/pool/data/ticket.gdb (ATT_1660341, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55278)
+	/usr/sbin/apache2:3230
+
+2016-11-09T13:39:13.7230 (25031:0x7f8c4cde90c0) TRACE_FINI
+	SESSION_5 new_trace_3
+	
+
+2016-11-09T13:39:13.7300 (25031:0x7f8c4cde38c0) COMMIT_RETAINING
+	/pool/data/ticket.gdb (ATT_1660342, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55282)
+	/usr/sbin/apache2:2847
+		(TRA_6146645, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms
+
+2016-11-09T13:39:13.7390 (25031:0x7f8c4cde38c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1660342, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55282)
+	/usr/sbin/apache2:2847
+
+Statement 21939:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_CMB_ETNEXT(1,251,null,'130')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_CMB_ETNEXT NATURAL)
+
+2016-11-09T13:39:13.7390 (25031:0x7f8c4cde38c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1660342, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55282)
+	/usr/sbin/apache2:2847
+
+Statement 21939:
+-------------------------------------------------------------------------------
+SELECT DESCRI, CODIGO, SELECTED FROM CRM_CMB_ETNEXT(1,251,null,'130')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (CRM_CMB_ETNEXT NATURAL)
+
+2016-11-09T13:39:13.7390 (25031:0x7f8c4cde38c0) ROLLBACK_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1660342, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55282)
+	/usr/sbin/apache2:2847
+		(TRA_6146645, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:13.7400 (25031:0x7f8c4cde38c0) DETACH_DATABASE
+	/pool/data/ticket.gdb (ATT_1660342, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/55282)
+	/usr/sbin/apache2:2847
+
+2016-11-09T13:39:13.7410 (25031:0x7f8c4cde38c0) TRACE_FINI
+	SESSION_5 new_trace_3
+	
+
+2016-11-09T13:39:13.9890 (25031:0x7f8c4cddd9c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146646, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:13.9960 (25031:0x7f8c4cddd9c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146646, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21942:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+      0 ms
+
+2016-11-09T13:39:13.9990 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146646, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21942:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:13.9990 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146646, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21942:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+0 records fetched
+      0 ms, 7 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+ZMS_CLIE                                2                                                                      
+
+2016-11-09T13:39:14.0020 (25031:0x7f8c4cddd9c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21942:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:14.0020 (25031:0x7f8c4cddd9c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21942:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:14.0030 (25031:0x7f8c4cddd9c0) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146646, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+
+ [2016-11-09 13:39:17.284 Info] 2016-11-09T13:39:15.1460 (25031:0x7f8c4cddd9c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146647, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:15.1490 (25031:0x7f8c4cddd9c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146647, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21943:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='GUILFORD' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+      0 ms
+
+2016-11-09T13:39:15.1510 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146647, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21943:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='GUILFORD' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:15.1510 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146647, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21943:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='GUILFORD' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+0 records fetched
+      0 ms, 7 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+ZMS_CLIE                                2                                                                      
+
+2016-11-09T13:39:15.1530 (25031:0x7f8c4cddd9c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21943:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='GUILFORD' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:15.1530 (25031:0x7f8c4cddd9c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21943:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='GUILFORD' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:15.1570 (25031:0x7f8c4cddd9c0) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146647, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      3 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:15.5970 (25031:0x7f8c4cde3440) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146648, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:15.5980 (25031:0x7f8c4cde3440) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146648, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21944:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+      0 ms
+
+2016-11-09T13:39:15.6000 (25031:0x7f8c4cde3440) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21944:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+
+2016-11-09T13:39:15.6010 (25031:0x7f8c4cde3440) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146648, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:15.6030 (25031:0x7f8c4cde3440) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146649, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:15.6150 (25031:0x7f8c4cde3440) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146649, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21945:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+      0 ms
+
+2016-11-09T13:39:15.6160 (25031:0x7f8c4cde3440) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146649, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21945:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+
+param0 = varchar(10), "TIK"
+param1 = varchar(20), "SERVER-LTSP"
+param2 = integer, "<NULL>"
+param3 = integer, "177869"
+
+
+2016-11-09T13:39:15.6820 (25031:0x7f8c4cde3440) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146649, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21945:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+
+param0 = varchar(10), "TIK"
+param1 = varchar(20), "SERVER-LTSP"
+param2 = integer, "<NULL>"
+param3 = integer, "177869"
+
+0 records fetched
+     65 ms, 53653 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+CRM_TIK_DATO                                  20729                                                            
+CLI_CTAC                             3036                                                                      
+RPT_MAQU                                          1                                                            
+
+2016-11-09T13:39:15.6840 (25031:0x7f8c4cde3440) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21945:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+
+2016-11-09T13:39:15.6840 (25031:0x7f8c4cde3440) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21945:
+-------------------------------------------------------------------------------
+SELECT FCOMPRO, FCOPIAS, FPLANTI, FNUMERO, FULTNUM, FPARAME, FPOSVAL
+FROM XXX_RPT_IMPDOC(?,?,?,?)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (XXX_RPT_IMPDOC NATURAL)
+
+2016-11-09T13:39:15.6850 (25031:0x7f8c4cde3440) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659836, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51842)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146649, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:16.0740 (25031:0x7f8c4cddd9c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146650, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:16.0750 (25031:0x7f8c4cddd9c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146650, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21946:
+-------------------------------------------------------------------------------
+SELECT COUNT(*) FROM ZMS_MENS WHERE FUSUHAS=18 AND FLEIDO='N'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (ZMS_MENS INDEX (ZMS_MENS_USUHAS))
+      0 ms
+
+2016-11-09T13:39:16.0760 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146650, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21946:
+-------------------------------------------------------------------------------
+SELECT COUNT(*) FROM ZMS_MENS WHERE FUSUHAS=18 AND FLEIDO='N'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (ZMS_MENS INDEX (ZMS_MENS_USUHAS))
+
+2016-11-09T13:39:16.0760 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146650, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21946:
+-------------------------------------------------------------------------------
+SELECT COUNT(*) FROM ZMS_MENS WHERE FUSUHAS=18 AND FLEIDO='N'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (ZMS_MENS INDEX (ZMS_MENS_USUHAS))
+1 records fetched
+      0 ms, 105 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+ZMS_MENS                                         51                                                            
+
+2016-11-09T13:39:16.0780 (25031:0x7f8c4cddd9c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21946:
+-------------------------------------------------------------------------------
+SELECT COUNT(*) FROM ZMS_MENS WHERE FUSUHAS=18 AND FLEIDO='N'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (ZMS_MENS INDEX (ZMS_MENS_USUHAS))
+
+2016-11-09T13:39:16.0780 (25031:0x7f8c4cddd9c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21946:
+-------------------------------------------------------------------------------
+SELECT COUNT(*) FROM ZMS_MENS WHERE FUSUHAS=18 AND FLEIDO='N'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (ZMS_MENS INDEX (ZMS_MENS_USUHAS))
+
+2016-11-09T13:39:16.0780 (25031:0x7f8c4cddd9c0) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146650, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2016-11-09T13:39:16.2330 (25031:0x7f8c4cddd9c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146651, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:16.2340 (25031:0x7f8c4cddd9c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146651, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21947:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SERVER-SIG' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+      0 ms
+
+2016-11-09T13:39:16.2350 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_START
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146651, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21947:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SERVER-SIG' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:16.2350 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_FINISH
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146651, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21947:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SERVER-SIG' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+0 records fetched
+      0 ms, 7 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+ZMS_CLIE                                2                                                                      
+
+2016-11-09T13:39:16.2360 (25031:0x7f8c4cddd9c0) CLOSE_CURSOR
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21947:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SERVER-SIG' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:16.2360 (25031:0x7f8c4cddd9c0) FREE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+
+Statement 21947:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SERVER-SIG' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+
+2016-11-09T13:39:16.2370 (25031:0x7f8c4cddd9c0) COMMIT_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146651, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+      0 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+
+ [2016-11-09 13:39:17.796 Info] 2016-11-09T13:39:16.9740 (25031:0x7f8c4cddd9c0) START_TRANSACTION
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146652, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+2016-11-09T13:39:16.9750 (25031:0x7f8c4cddd9c0) PREPARE_STATEMENT
+	/pool/data/ticket.gdb (ATT_1659835, SYSDBA:NONE, ISO88591, TCPv4:10.0.0.10/51836)
+	Z:\media\sistema\sis_ejecutables\sigmaweb\sigserver.exe:40
+		(TRA_6146652, READ_COMMITTED | REC_VERSION | NOWAIT | READ_WRITE)
+
+Statement 21948:
+-------------------------------------------------------------------------------
+SELECT Z.FMESAGE FROM ZMS_CLIE Z WHERE UPPER(Z.FAPPSRV)='SAAS' AND Z.FENVIAR='S' AND Z.FFECHA=CURRENT_DATE AND COALESCE(Z.FMESAGE,'')<>'' ORDER BY Z.FINDICE DESC ROWS 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (Z NATURAL)
+      0 ms
+
+2016-11-09T13:39:16.9760 (25031:0x7f8c4cddd9c0) EXECUTE_STATEMENT_START
+	/pool/data/tic
+ [2016-11-09 13:39:17.807 Info] Trace session 5 finished (NoData: 0; Terminated: 1)

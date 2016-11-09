@@ -1,98 +1,99 @@
 object FrmEditTrace: TFrmEditTrace
   Left = 755
-  Height = 478
+  Height = 560
   Top = 205
-  Width = 407
+  Width = 800
   BorderIcons = []
   BorderStyle = bsDialog
   Caption = 'Trace configuration'
-  ClientHeight = 478
-  ClientWidth = 407
+  ClientHeight = 560
+  ClientWidth = 800
   OnCreate = FormCreate
   Position = poMainFormCenter
-  LCLVersion = '1.4.2.0'
+  LCLVersion = '1.6.0.4'
   object EdtHost: TLabeledEdit
     Left = 8
     Height = 27
-    Top = 77
-    Width = 296
+    Top = 88
+    Width = 298
     EditLabel.AnchorSideLeft.Control = EdtHost
     EditLabel.AnchorSideRight.Control = EdtHost
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = EdtHost
     EditLabel.Left = 8
     EditLabel.Height = 17
-    EditLabel.Top = 57
-    EditLabel.Width = 296
+    EditLabel.Top = 68
+    EditLabel.Width = 298
     EditLabel.Caption = 'Host'
     EditLabel.ParentColor = False
     TabOrder = 1
   end
   object EdtUser: TLabeledEdit
-    Left = 8
+    Left = 10
     Height = 27
-    Top = 133
-    Width = 168
+    Top = 216
+    Width = 174
     EditLabel.AnchorSideLeft.Control = EdtUser
     EditLabel.AnchorSideRight.Control = EdtUser
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = EdtUser
-    EditLabel.Left = 8
+    EditLabel.Left = 10
     EditLabel.Height = 17
-    EditLabel.Top = 113
-    EditLabel.Width = 168
+    EditLabel.Top = 196
+    EditLabel.Width = 174
     EditLabel.Caption = 'User name'
     EditLabel.ParentColor = False
-    TabOrder = 3
+    TabOrder = 4
   end
   object EdtPassword: TLabeledEdit
-    Left = 232
+    Left = 200
     Height = 27
-    Top = 133
-    Width = 168
+    Top = 216
+    Width = 202
     EchoMode = emPassword
     EditLabel.AnchorSideLeft.Control = EdtPassword
     EditLabel.AnchorSideRight.Control = EdtPassword
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = EdtPassword
-    EditLabel.Left = 232
+    EditLabel.Left = 200
     EditLabel.Height = 17
-    EditLabel.Top = 113
-    EditLabel.Width = 168
+    EditLabel.Top = 196
+    EditLabel.Width = 202
     EditLabel.Caption = 'Password'
     EditLabel.ParentColor = False
     PasswordChar = '*'
-    TabOrder = 4
+    TabOrder = 5
   end
   object BtnCancel: TBitBtn
-    Left = 325
+    Left = 327
     Height = 25
-    Top = 441
+    Top = 520
     Width = 75
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2
-    TabOrder = 7
+    TabOrder = 8
   end
   object BtnOK: TBitBtn
-    Left = 240
+    Left = 242
     Height = 25
-    Top = 441
+    Top = 520
     Width = 75
     Caption = 'OK'
     Default = True
     ModalResult = 1
     OnClick = BtnOKClick
-    TabOrder = 8
+    TabOrder = 9
   end
   object EdtConfValues: TValueListEditor
-    Left = 8
-    Height = 185
-    Top = 240
-    Width = 392
+    Left = 416
+    Height = 544
+    Top = 8
+    Width = 376
+    DefaultColWidth = 240
     FixedCols = 0
     RowCount = 2
-    TabOrder = 6
+    TabOrder = 7
     KeyOptions = [keyUnique]
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goEditing, goThumbTracking]
     Strings.Strings = (
@@ -103,14 +104,14 @@ object FrmEditTrace: TFrmEditTrace
       'Value'
     )
     ColWidths = (
-      194
-      196
+      240
+      134
     )
   end
   object EdtPort: TSpinEdit
     Left = 316
     Height = 27
-    Top = 77
+    Top = 88
     Width = 84
     MaxValue = 100000
     MinValue = 1
@@ -120,28 +121,28 @@ object FrmEditTrace: TFrmEditTrace
   object Label1: TLabel
     Left = 316
     Height = 17
-    Top = 56
+    Top = 67
     Width = 30
     Caption = 'Port'
     ParentColor = False
   end
   object EdtDatabaseFilter: TLabeledEdit
-    Left = 8
+    Left = 10
     Height = 27
-    Top = 200
+    Top = 352
     Width = 392
     EditLabel.AnchorSideLeft.Control = EdtDatabaseFilter
     EditLabel.AnchorSideRight.Control = EdtDatabaseFilter
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = EdtDatabaseFilter
-    EditLabel.Left = 8
+    EditLabel.Left = 10
     EditLabel.Height = 34
-    EditLabel.Top = 163
+    EditLabel.Top = 315
     EditLabel.Width = 392
     EditLabel.Caption = 'Database filter (you should provide full path to database or leave it empty to watch all databases)'
     EditLabel.ParentColor = False
     EditLabel.WordWrap = True
-    TabOrder = 5
+    TabOrder = 6
   end
   object EdtTraceName: TLabeledEdit
     Left = 8
@@ -163,15 +164,55 @@ object FrmEditTrace: TFrmEditTrace
   object BtnSaveConf: TBitBtn
     Left = 10
     Height = 25
-    Top = 440
+    Top = 520
     Width = 75
     Caption = 'Save...'
     OnClick = BtnSaveConfClick
-    TabOrder = 9
+    TabOrder = 10
+  end
+  object edtVersion: TComboBox
+    Left = 316
+    Height = 27
+    Top = 152
+    Width = 75
+    ItemHeight = 0
+    ItemIndex = 0
+    Items.Strings = (
+      '3'
+      '2'
+    )
+    Style = csDropDownList
+    TabOrder = 3
+    Text = '3'
+  end
+  object Label2: TLabel
+    Left = 320
+    Height = 17
+    Top = 133
+    Width = 52
+    Caption = 'Version'
+    ParentColor = False
+  end
+  object EdtLibPath: TLabeledEdit
+    Left = 10
+    Height = 27
+    Top = 152
+    Width = 296
+    EditLabel.AnchorSideLeft.Control = EdtLibPath
+    EditLabel.AnchorSideRight.Control = EdtLibPath
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = EdtLibPath
+    EditLabel.Left = 10
+    EditLabel.Height = 17
+    EditLabel.Top = 132
+    EditLabel.Width = 296
+    EditLabel.Caption = 'fbclient Library Path'
+    EditLabel.ParentColor = False
+    TabOrder = 11
   end
   object DlgSaveConf: TSaveDialog
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
-    left = 120
-    top = 432
+    left = 16
+    top = 400
   end
 end

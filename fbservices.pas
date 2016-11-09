@@ -97,6 +97,7 @@ type
     FQueryTimeout: int32;
     FServerName: string;
     FPort: integer;
+    FLibPath: string;
     FSessionId: integer;
     FTraceName: string;
     FUserName: string;
@@ -607,6 +608,5 @@ begin
     FAccess.Leave;
   end;
 end;
-
 
 end.

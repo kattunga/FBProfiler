@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/usr/bin/fpc" Date="1454174389"/>
-  <Params Value=" -MObjFPC -Scaghi -Cg -O1 -g -gl -Xg -l -vewnhibq -Fi/home/christian/temp/fbprofiler-code-6/lib/x86_64-linux -Fl/opt/gnome/lib -Fu/home/christian/temp/fbprofiler-code-6/ibx/runtime -Fu/usr/lib/lazarus/1.6/components/tdbf/lib/x86_64-linux/gtk2 -Fu/usr/lib/lazarus/1.6/components/ideintf/units/x86_64-linux/gtk2 -Fu/usr/lib/lazarus/1.6/components/lazcontrols/lib/x86_64-linux/gtk2 -Fu/usr/lib/lazarus/1.6/lcl/units/x86_64-linux/gtk2 -Fu/usr/lib/lazarus/1.6/lcl/units/x86_64-linux -Fu/usr/lib/lazarus/1.6/components/lazutils/lib/x86_64-linux -Fu/usr/lib/lazarus/1.6/packager/units/x86_64-linux -Fu/home/christian/temp/fbprofiler-code-6/ -FU/home/christian/temp/fbprofiler-code-6/lib/x86_64-linux/ -dLCL -dLCLgtk2 -dUseCThreads fbprofiler.lpr"/>
-</CONFIG>

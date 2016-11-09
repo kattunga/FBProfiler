@@ -61,11 +61,13 @@ type
   private
     FDatabaseFilter: string;
     FHostName: string;
+    FLibPath: string;
     FParams: TTraceConfigParams;
     FPassword: string;
     FPort: integer;
     FTraceName: string;
     FUserName: string;
+    FVersion: string;
     procedure SetHostName(AValue: string);
     procedure SetPassword(AValue: string);
     procedure SetPort(AValue: integer);
@@ -76,11 +78,13 @@ type
     procedure MakeTraceName(Counter: integer);
     property DatabaseFilter: string read FDatabaseFilter write FDatabaseFilter;
     property HostName: string read FHostName write SetHostName;
+    property LibPath: string read FLibPath write FLibPath;
     property Params: TTraceConfigParams read FParams;
     property Password: string read FPassword write SetPassword;
     property Port: integer read FPort write SetPort;
     property TraceName: string read FTraceName write FTraceName;
     property UserName: string read FUserName write SetUserName;
+    property Version: string read FVersion write FVersion;
   end;
 
   { TTraceSession }
@@ -141,7 +145,8 @@ implementation
 
 uses
   StrUtils,
-  AppServices;
+  AppServices,
+  IBIntf;
 
 { TTraceConfigParam }
 
@@ -180,9 +185,11 @@ begin
   inherited Create;
   FHostName := 'localhost';
   FPort := FBServices.DefaultPort;
+  FLibPath := '';
   FUserName := 'SYSDBA';
   FPassword := 'masterkey';
   FDatabaseFilter := '';
+  FVersion := '3';
   FParams := TTraceConfigParams.Create;
   FParams.Add(TTraceConfigParam.Create('log_transactions', 'true', ptBoolean));
   FParams.Add(TTraceConfigParam.Create('log_connections', 'true', ptBoolean));
@@ -321,6 +328,8 @@ procedure TTraceSession.Start;
 var
   i: integer;
 begin
+  IBLibaryPath := FConfig.LibPath;
+
   if (FTraceService = nil) and not Active then
   begin
     GetLog.Info('Creating trace...');
@@ -345,18 +354,44 @@ begin
         IfThen(FConfig.Password = '', 'blank password', 'password specified')]);
       FTraceService.Protocol := TCP;
       FTraceService.Configuration.Clear;
-      if FConfig.DatabaseFilter <> '' then
-        FTraceService.Configuration.Add('<database ' + FConfig.DatabaseFilter + '>')
+
+      if FConfig.Version = '3' then
+        begin
+
+          if FConfig.DatabaseFilter <> '' then
+            FTraceService.Configuration.Add('database = ' + FConfig.DatabaseFilter)
+          else
+            FTraceService.Configuration.Add('database');
+          FTraceService.Configuration.Add('{');
+          FTraceService.Configuration.Add('enabled = true');
+          for i := 0 to FConfig.Params.Count - 1 do
+            FTraceService.Configuration.Add(
+              FConfig.Params[i].Name + ' = ' + FConfig.Params[i].Value);
+          FTraceService.Configuration.Add(Format('max_sql_length = %d', [FBServices.DefaultBufferSize div 2]));
+          FTraceService.Configuration.Add(Format('max_blr_length = %d', [FBServices.DefaultBufferSize div 2]));
+          FTraceService.Configuration.Add(Format('max_dyn_length = %d', [FBServices.DefaultBufferSize div 2]));
+          FTraceService.Configuration.Add('}');
+
+        end
+
       else
-        FTraceService.Configuration.Add('<database>');
-      FTraceService.Configuration.Add('enabled true');
-      for i := 0 to FConfig.Params.Count - 1 do
-        FTraceService.Configuration.Add(
-          FConfig.Params[i].Name + ' ' + FConfig.Params[i].Value);
-      FTraceService.Configuration.Add(Format('max_sql_length %d', [FBServices.DefaultBufferSize div 2]));
-      FTraceService.Configuration.Add(Format('max_blr_length %d', [FBServices.DefaultBufferSize div 2]));
-      FTraceService.Configuration.Add(Format('max_dyn_length %d', [FBServices.DefaultBufferSize div 2]));
-      FTraceService.Configuration.Add('</database>');
+        begin
+
+          if FConfig.DatabaseFilter <> '' then
+            FTraceService.Configuration.Add('<database ' + FConfig.DatabaseFilter + '>')
+          else
+            FTraceService.Configuration.Add('<database>');
+          FTraceService.Configuration.Add('enabled true');
+          for i := 0 to FConfig.Params.Count - 1 do
+            FTraceService.Configuration.Add(
+              FConfig.Params[i].Name + ' ' + FConfig.Params[i].Value);
+          FTraceService.Configuration.Add(Format('max_sql_length %d', [FBServices.DefaultBufferSize div 2]));
+          FTraceService.Configuration.Add(Format('max_blr_length %d', [FBServices.DefaultBufferSize div 2]));
+          FTraceService.Configuration.Add(Format('max_dyn_length %d', [FBServices.DefaultBufferSize div 2]));
+          FTraceService.Configuration.Add('</database>');
+
+        end;
+
       GetLog.Info('Configuration:' + LineEnding + FTraceService.Configuration.Text);
 
       GetLog.Info('Starting trace %s', [FConfig.TraceName]);

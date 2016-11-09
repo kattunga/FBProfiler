@@ -39,6 +39,10 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
+#: tfrmedittrace.edtlibpath.editlabel.caption
+msgid "fbclient Library Path"
+msgstr ""
+
 #: tfrmedittrace.edtpassword.editlabel.caption
 msgid "Password"
 msgstr ""
@@ -51,8 +55,16 @@ msgstr ""
 msgid "User name"
 msgstr ""
 
+#: tfrmedittrace.edtversion.text
+msgid "3"
+msgstr ""
+
 #: tfrmedittrace.label1.caption
 msgid "Port"
+msgstr ""
+
+#: tfrmedittrace.label2.caption
+msgid "Version"
 msgstr ""
 
 #: tfrmmain.actioncleartrace.caption

@@ -1,0 +1,35 @@
+ [2016-11-09 14:43:12.167 Info] Firebird database profiler started
+ [2016-11-09 14:43:36.169 Info] Creating trace...
+ [2016-11-09 14:44:17.254 Info] Creating trace...
+ [2016-11-09 14:44:22.666 Info] Trace name: new_trace_2
+ [2016-11-09 14:44:22.666 Info] Host name: server-data
+ [2016-11-09 14:44:22.666 Info] Port: 3050
+ [2016-11-09 14:44:22.666 Info] User name: SYSDBA (password specified)
+ [2016-11-09 14:44:22.666 Info] Configuration:
+database = /pool/data/ticket.gdb
+{
+enabled = true
+log_transactions = true
+log_connections = true
+log_statement_prepare = true
+log_statement_free = true
+log_statement_start = true
+log_statement_finish = true
+log_procedure_start = false
+log_procedure_finish = false
+log_trigger_start = false
+log_trigger_finish = false
+log_blr_requests = true
+print_blr = false
+log_dyn_requests = true
+print_dyn = false
+print_perf = true
+print_plan = true
+time_threshold = 0
+max_sql_length = 16000
+max_blr_length = 16000
+max_dyn_length = 16000
+}
+
+ [2016-11-09 14:44:22.666 Info] Starting trace new_trace_2
+ [2016-11-09 14:44:22.666 Info] Trace log redirected to file: /home/christian/git/FBProfiler/new_trace_2.log

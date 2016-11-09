@@ -164,6 +164,7 @@ procedure isc_decode_timestamp_stub(ib_timestamp     : PISC_TIMESTAMP;
 
 
 var  IBServiceAPIPresent: boolean;
+var  IBLibaryPath: string = FIREBIRD_SO2;
 
 type
   TOnGetLibraryName = procedure(var libname: string);
@@ -222,7 +223,7 @@ procedure LoadIBLibrary;
       if assigned(OnGetLibraryName) then
         OnGetLibraryName(LibName)
       else
-        LibName := FIREBIRD_SO2;
+        LibName := IBLibaryPath;
     end;
     Result := FindLibrary(LibName);
     {$IFDEF DARWIN}
