@@ -1,0 +1,14 @@
+2013-06-20T13:55:41.0660 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 36:
+-------------------------------------------------------------------------------
+select rdb$character_set_name
+from rdb$database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$DATABASE NATURAL)
+      22 ms
+
+2013-06-20T13:55:41.0660 (1252:012BDEB0) ROLLBACK_TRANSACTION

@@ -1,0 +1,120 @@
+2013-06-20T13:56:28.4340 (1252:012BCA44) START_TRANSACTION
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_38, CONCURRENCY | WAIT | READ_WRITE)
+
+2013-06-20T13:56:28.4340 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_38, CONCURRENCY | WAIT | READ_WRITE)
+
+Statement 58:
+-------------------------------------------------------------------------------
+INSERT INTO BAI_UPDATE (OBJ_ID, OBJ_TYPE, OBJ_NAME)
+ VALUES (
+11, 
+1, 
+'obj name '' déjà'
+)
+      0 ms
+
+2013-06-20T13:56:28.4540 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_38, CONCURRENCY | WAIT | READ_WRITE)
+
+Statement 58:
+-------------------------------------------------------------------------------
+INSERT INTO BAI_UPDATE (OBJ_ID, OBJ_TYPE, OBJ_NAME)
+ VALUES (
+11, 
+1, 
+'obj name '' déjà'
+)
+
+2013-06-20T13:56:28.4640 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_38, CONCURRENCY | WAIT | READ_WRITE)
+
+Statement 58:
+-------------------------------------------------------------------------------
+INSERT INTO BAI_UPDATE (OBJ_ID, OBJ_TYPE, OBJ_NAME)
+ VALUES (
+11, 
+1, 
+'obj name '' déjà'
+)
+0 records fetched
+      1 ms, 3 read(s), 9 fetch(es), 3 mark(s)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+BAI_UPDATE                                                            1                                        
+
+2013-06-20T13:56:28.4640 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_38, CONCURRENCY | WAIT | READ_WRITE)
+
+Statement 61:
+-------------------------------------------------------------------------------
+select rdb$relation_name from rdb$relations where rdb$relation_id = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$RELATIONS INDEX (RDB$INDEX_1))
+      0 ms
+
+2013-06-20T13:56:28.4640 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_38, CONCURRENCY | WAIT | READ_WRITE)
+
+Statement 61:
+-------------------------------------------------------------------------------
+select rdb$relation_name from rdb$relations where rdb$relation_id = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$RELATIONS INDEX (RDB$INDEX_1))
+
+param0 = smallint, "129"
+
+
+2013-06-20T13:56:28.4640 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_38, CONCURRENCY | WAIT | READ_WRITE)
+
+Statement 61:
+-------------------------------------------------------------------------------
+select rdb$relation_name from rdb$relations where rdb$relation_id = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$RELATIONS INDEX (RDB$INDEX_1))
+
+param0 = smallint, "129"
+
+1 records fetched
+      0 ms, 4 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$RELATIONS                                     1                                                            
+
+2013-06-20T13:56:28.4640 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 61:
+-------------------------------------------------------------------------------
+select rdb$relation_name from rdb$relations where rdb$relation_id = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$RELATIONS INDEX (RDB$INDEX_1))
+
+2013-06-20T13:56:28.4640 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 61:
+-------------------------------------------------------------------------------
+select rdb$relation_name from rdb$relations where rdb$relation_id = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$RELATIONS INDEX (RDB$INDEX_1))
+

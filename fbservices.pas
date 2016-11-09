@@ -1,0 +1,612 @@
+{---------------------------------------------------------------------}
+{                                                                     }
+{ Firebird database server profiler tool (FBProfiler)                 }
+{                                                                     }
+{ Copyright (c) 2013-2015 Bel Air Informatique (www.belair-info.fr)   }
+{ Copyright (c) 2013-2015 Serguei Tarassov (www.arbinada.com)         }
+{                                                                     }
+{ FBProfiler uses IBX For Lazarus components (Firebird Express)       }
+{ FBProfiler was firstly released for public domain                   }
+{ on October 31 of 2015 (Halloween) so any donations are welcome.     }
+{                                                                     }
+{ The contents of this file are subject to the InterBase              }
+{ Public License Version 1.0 (the "License"); you may not             }
+{ use this file except in compliance with the License. You            }
+{ may obtain a copy of the License at                                 }
+{ http://www.firebirdsql.org/en/interbase-public-license/             }
+{ Software distributed under the License is distributed on            }
+{ an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either              }
+{ express or implied. See the License for the specific language       }
+{ governing rights and limitations under the License.                 }
+{                                                                     }
+{---------------------------------------------------------------------}
+
+unit FBServices;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  {$IFDEF UNIX}
+  cthreads,
+  {$ENDIF}
+  Classes, SysUtils,
+  Contnrs, SyncObjs,
+  IBHeader, IBExternals, FBTraceEvents;
+
+const
+  DefaultPort = 3050;
+  TraceQueryTimeoutSec = 1;
+  MaxMessagesInQueue = 3600; // When limit is reached, old messages will be deleted
+
+const
+  DefaultBufferSize = 32000;
+  // Defines from const_pub.h
+  // Service action items
+  isc_action_svc_trace_start = 22;  // Start trace session
+  isc_action_svc_trace_stop = 23;  // Stop trace session
+  isc_action_svc_trace_suspend = 24;  // Suspend trace session
+  isc_action_svc_trace_resume = 25;  // Resume trace session
+  isc_action_svc_trace_list = 26;  // List existing sessions
+  // Parameters for isc_action_svc_trace
+  isc_spb_trc_id = 1;
+  isc_spb_trc_name = 2;
+  isc_spb_trc_cfg = 3;
+
+type
+  TProtocol = (TCP, SPX, NamedPipe);
+  TFBTraceService = class;
+
+  { TISCParams }
+
+  TISCParams = class
+  private
+    FValue: string;
+  public
+    constructor Create(Param: Short); overload;
+    procedure Clear;
+    procedure Add(Param: byte);
+    procedure AddLength(Value: Short);
+    procedure AddInt32(Value: int32);
+    procedure Add(Value: string; Param: byte);
+    procedure Add(Value: int32; Param: byte);
+    property Value: string read FValue;
+  end;
+
+  TNotifyFBTraceEvent = procedure(const TraceEvent: TFBTraceEvent) of object;
+  TNotifyFBTraceMessageEvent = procedure(const TraceMsg: string) of object;
+  TNotifyFBTraceErrorEvent = procedure(Sender: TObject; const E: Exception) of object;
+
+  { TFBTraceService }
+
+  TFBTraceService = class(TThread)
+  private
+    FAccess: TCriticalSection;
+    FConfiguration: TStrings;
+    FHandle: TISC_SVC_HANDLE;
+    FLastException: Exception;
+    FIBLoaded: boolean;
+    FLastTraceMessage: string;
+    FMessagesQueue: TObjectQueue;
+    FOutputBuffer: PChar;
+    FOutputBufferSize: integer;
+    FParser: TFBTraceMessageParser;
+    FPassword: string;
+    FProtocol: TProtocol;
+    FQueryTimeout: int32;
+    FServerName: string;
+    FPort: integer;
+    FSessionId: integer;
+    FTraceName: string;
+    FUserName: string;
+    // events
+    FOnTraceEvent: TNotifyFBTraceEvent;
+    FOnTraceMessage: TNotifyFBTraceMessageEvent;
+    FOnExceptionOccurred: TNotifyFBTraceErrorEvent;
+    procedure DoExceptionOccurred;
+    function Call(ErrCode: ISC_STATUS; RaiseError: boolean): ISC_STATUS;
+    procedure CheckActive;
+    procedure CheckInactive;
+    procedure CheckServerName;
+    procedure GenerateSPB(var SPB: string; var SPBLength: Short);
+    function GetSessionId: integer;
+    procedure SetPort(const Value: integer);
+    procedure SetProtocol(const Value: TProtocol);
+    procedure OutputTraceEvents;
+    procedure OutputTraceRawMessage;
+  protected
+    procedure Attach;
+    procedure Detach;
+    procedure InternalQuery(QueryParams, SendParams: TISCParams);
+    procedure InternalStart(StartParams: TISCParams);
+    procedure ProcessTraceMessage(const TraceMsg: string);
+    procedure PushTraceEvent(const TraceEvent: TFBTraceEvent);
+  public
+    constructor Create(CreateSuspended: boolean;
+      const StackSize: SizeUInt = DefaultStackSize);
+    destructor Destroy; override;
+    procedure Execute; override;
+    function PopTraceEvent(var TraceEvent: TFBTraceEvent): boolean;
+    property QueryTimeout: int32
+      read FQueryTimeout write FQueryTimeout; // Service request timeout in seconds
+    property SessionId: integer read GetSessionId;
+    property TraceName: string read FTraceName write FTraceName;
+  published
+    property Configuration: TStrings read FConfiguration;
+    property Password: string read FPassword write FPassword;
+    property Port: integer read FPort write SetPort;
+    property Protocol: TProtocol read FProtocol write SetProtocol default TCP;
+    property ServerName: string read FServerName write FServerName;
+    property UserName: string read FUserName write FUserName;
+    // Events
+    {.$HINT Use messages queue to avoid collisions because of unknown responce delay of event handler}
+    property OnTraceEvent: TNotifyFBTraceEvent
+      read FOnTraceEvent write FOnTraceEvent;
+    property OnTraceMessage: TNotifyFBTraceMessageEvent
+      read FOnTraceMessage write FOnTraceMessage;
+    property OnExceptionOccurred: TNotifyFBTraceErrorEvent
+      read FOnExceptionOccurred write FOnExceptionOccurred;
+  end;
+
+implementation
+
+uses
+  IB, IBIntf, IBServices;
+
+{ TISCParams }
+
+constructor TISCParams.Create(Param: Short);
+begin
+  inherited Create;
+  FValue := char(Param);
+end;
+
+procedure TISCParams.Clear;
+begin
+  FValue := '';
+end;
+
+procedure TISCParams.Add(Param: byte);
+begin
+  FValue := FValue + char(Param);
+end;
+
+procedure TISCParams.AddLength(Value: Short);
+begin
+  FValue := FValue +
+    PChar(@Value)[0] +
+    PChar(@Value)[1];
+end;
+
+procedure TISCParams.AddInt32(Value: int32);
+begin
+  FValue := FValue +
+    PChar(@Value)[0] +
+    PChar(@Value)[1] +
+    PChar(@Value)[2] +
+    PChar(@Value)[3];
+end;
+
+procedure TISCParams.Add(Value: string; Param: byte);
+var
+  Len: UShort;
+begin
+  Len := Length(Value);
+  if Len > 0 then
+  begin
+    FValue := FValue + char(Param) +
+      PChar(@Len)[0] +
+      PChar(@Len)[1] +
+      Value;
+  end;
+end;
+
+procedure TISCParams.Add(Value: int32; Param: byte);
+begin
+  FValue := FValue + char(Param) +
+    PChar(@Value)[0] +
+    PChar(@Value)[1] +
+    PChar(@Value)[2] +
+    PChar(@Value)[3];
+end;
+
+{ TFBTraceService }
+
+constructor TFBTraceService.Create(CreateSuspended: boolean;
+  const StackSize: SizeUInt);
+begin
+  inherited Create(CreateSuspended, StackSize);
+  FSessionId := -1;
+  FAccess := TCriticalSection.Create;
+  FConfiguration := TStringList.Create;
+  FMessagesQueue := TObjectQueue.Create;
+  FIBLoaded := false;
+  FQueryTimeout := TraceQueryTimeoutSec;
+  FOutputBufferSize := DefaultBufferSize;
+  FHandle := nil;
+  FOutputbuffer := nil;
+  FParser := TFBTraceMessageParser.Create;
+  FProtocol := TCP;
+  CheckIBLoaded;
+  FIBLoaded := true;
+  FTraceName := Format('Trace %p (%s)', [Pointer(Self), ParamStr(0)]);
+end;
+
+destructor TFBTraceService.Destroy;
+var
+  Msg: TFBTraceEvent = nil;
+begin
+  if FIBLoaded then
+  begin
+    if FHandle <> nil then
+      Detach;
+  end;
+  ReallocMem(FOutputBuffer, 0);
+  if FMessagesQueue <> nil then
+  begin
+    while PopTraceEvent(Msg) do
+      FreeAndNil(Msg);
+    FMessagesQueue.Free;
+  end;
+  if FConfiguration <> nil then
+    FConfiguration.Free;
+  if FAccess <> nil then
+    FAccess.Free;
+  if FParser <> nil then
+    FParser.Free;
+  inherited Destroy;
+end;
+
+procedure TFBTraceService.DoExceptionOccurred;
+begin
+  if FLastException <> nil then
+  begin
+    if Assigned(FOnExceptionOccurred) then
+      FOnExceptionOccurred(Self, FLastException)
+    else
+      raise FLastException;
+  end;
+end;
+
+function TFBTraceService.Call(ErrCode: ISC_STATUS; RaiseError: boolean): ISC_STATUS;
+begin
+  Result := ErrCode;
+  if RaiseError and (ErrCode > 0) then
+    IBDataBaseError;
+end;
+
+procedure TFBTraceService.CheckActive;
+begin
+  if FHandle = nil then
+    IBError(ibxeServiceActive, [nil]);
+end;
+
+procedure TFBTraceService.CheckInactive;
+begin
+  if FHandle <> nil then
+    IBError(ibxeServiceInActive, [nil]);
+end;
+
+procedure TFBTraceService.CheckServerName;
+begin
+  if FServerName = '' then
+    IBError(ibxeServerNameMissing, [nil]);
+end;
+
+procedure TFBTraceService.GenerateSPB(var SPB: string; var SPBLength: Short);
+begin
+  { The SPB is initially empty, with the exception that
+   the SPB version must be the first byte of the string.
+  }
+  SPB := char(isc_spb_version) + char(isc_spb_current_version);
+  SPBLength := 2;
+
+  SPB := SPB + char(isc_spb_user_name_mapped_to_server) +
+    char(Length(FUserName)) + FUserName;
+  Inc(SPBLength, 2 + Length(FUserName));
+  SPB := SPB + char(isc_spb_password_mapped_to_server) +
+    char(Length(FPassword)) + FPassword;
+  Inc(SPBLength, 2 + Length(FPassword));
+end;
+
+function TFBTraceService.GetSessionId: integer;
+begin
+  FAccess.Enter;
+  try
+    Result := FSessionId;
+  finally
+    FAccess.Leave;
+  end;
+end;
+
+procedure TFBTraceService.SetPort(const Value: integer);
+begin
+  if FPort = Value then Exit;
+  CheckInactive;
+  FPort := Value;
+end;
+
+procedure TFBTraceService.SetProtocol(const Value: TProtocol);
+begin
+  if FProtocol = Value then Exit;
+  CheckInactive;
+  FProtocol := Value;
+end;
+
+procedure TFBTraceService.Attach;
+var
+  SPB: string = '';
+  SPBLength: Short = 0;
+  PSPB: PChar = nil;
+  ConnectString: string;
+begin
+  CheckInactive;
+  CheckServerName;
+
+  GenerateSPB(SPB, SPBLength);
+  IBAlloc(PSPB, 0, SPBLength);
+  try
+    Move(SPB[1], PSPB[0], SPBLength);
+    case FProtocol of
+      TCP: ConnectString := FServerName + '/' +IntToStr(FPort) + ':service_mgr';
+      SPX: ConnectString := FServerName + '@service_mgr';
+      NamedPipe: ConnectString := '\\' + FServerName + '\service_mgr';
+    end;
+    if call(isc_service_attach(StatusVector, Length(ConnectString),
+      PChar(ConnectString), @FHandle, SPBLength, PSPB), false) > 0 then
+    begin
+      FHandle := nil;
+      IBDataBaseError;
+    end;
+  finally
+    FreeMem(PSPB);
+  end;
+end;
+
+procedure TFBTraceService.Detach;
+begin
+  CheckActive;
+  if (Call(isc_service_detach(StatusVector, @FHandle), false) > 0) then
+  begin
+    FHandle := nil;
+    IBDataBaseError;
+  end
+  else
+    FHandle := nil;
+end;
+
+procedure TFBTraceService.InternalStart(StartParams: TISCParams);
+var
+  SPBLength: integer;
+  PSPB: PChar = nil;
+begin
+  SPBLength := Length(StartParams.Value);
+  if SPBLength = 0 then
+    IBError(ibxeStartParamsError, [nil]);
+  IBAlloc(PSPB, 0, SPBLength);
+  Move(StartParams.Value[1], PSPB[0], SPBLength);
+  try
+    if call(isc_service_start(StatusVector, @FHandle, nil, SPBLength, PSPB),
+      false) > 0 then
+    begin
+      FHandle := nil;
+      IBDataBaseError;
+    end;
+  finally
+    FreeMem(PSPB);
+  end;
+end;
+
+procedure TFBTraceService.InternalQuery(QueryParams, SendParams: TISCParams);
+var
+  ParamSPBLength, SendSPBLength: integer;
+  PParamSPB, PSendSPB: PChar;
+begin
+  ParamSPBLength := Length(QueryParams.Value);
+  if ParamSPBLength = 0 then
+    IBError(ibxeQueryParamsError, [nil]);
+  PParamSPB := nil;
+  IBAlloc(PParamSPB, 0, ParamSPBLength);
+  Move(QueryParams.Value[1], PParamSPB[0], ParamSPBLength);
+
+  SendSPBLength := Length(SendParams.Value);
+  if SendSPBLength > 0 then
+  begin
+    PSendSPB := nil;
+    IBAlloc(PSendSPB, 0, SendSPBLength);
+    Move(SendParams.Value[1], PSendSPB[0], SendSPBLength);
+  end;
+
+  try
+    if (FOutputBuffer = nil) then
+      IBAlloc(FOutputBuffer, 0, FOutputBufferSize);
+    if call(isc_service_query(StatusVector, @FHandle, nil, SendSPBLength,
+      PSendSPB, ParamSPBLength, PParamSPB, FOutputBufferSize, FOutputBuffer),
+      false) > 0 then
+    begin
+      FHandle := nil;
+      IBDataBaseError;
+    end;
+  finally
+    FreeMem(PParamSPB);
+    FreeMem(PSendSPB);
+  end;
+end;
+
+procedure TFBTraceService.OutputTraceEvents;
+var
+  CurrEvent: TFBTraceEvent = nil;
+begin
+  if Assigned(OnTraceEvent) then
+    while PopTraceEvent(CurrEvent) do
+    begin
+      FOnTraceEvent(CurrEvent);
+      FreeAndNil(CurrEvent);
+    end;
+end;
+
+procedure TFBTraceService.OutputTraceRawMessage;
+begin
+  if Assigned(OnTraceMessage) then
+    FOnTraceMessage(FLastTraceMessage);
+end;
+
+procedure TFBTraceService.ProcessTraceMessage(const TraceMsg: string);
+var
+  CurrEvent: TFBTraceEvent = nil;
+begin
+  if TraceMsg = '' then
+  begin
+    FParser.Pop;
+  end
+  else
+  begin
+    FLastTraceMessage := TraceMsg;
+    FParser.Continue(TraceMsg);
+    Synchronize(@OutputTraceRawMessage);
+    if Terminated then
+      FParser.PopSessionFinished;
+  end;
+
+  while FParser.NextEvent(CurrEvent) do
+  begin
+    PushTraceEvent(CurrEvent);
+    if CurrEvent.EventType = etSessionStarted then
+      FSessionId := CurrEvent.SessionId;
+    Synchronize(@OutputTraceEvents);
+  end;
+end;
+
+procedure TFBTraceService.Execute;
+var
+  NoData: boolean = true;
+  CurrPos, j, TraceMessageLength: integer;
+  CurrLen: UInt16;
+  CurrByte: byte;
+  IgnoreTruncation: boolean;
+  StartParams, QueryParams, SendParams: TISCParams;
+  TraceMsg: string;
+begin
+  try
+    Attach;
+    CheckActive;
+    if (FConfiguration.Count = 0) or (FConfiguration.Text = '') then
+      IBError(ibxeStartParamsError, [nil]);
+
+    StartParams := TISCParams.Create(isc_action_svc_trace_start);
+    try
+      StartParams.Add(TraceName, isc_spb_trc_name);
+      StartParams.Add(FConfiguration.Text, isc_spb_trc_cfg);
+      InternalStart(StartParams);
+    finally
+      StartParams.Free;
+    end;
+
+    IgnoreTruncation := false;
+    NoData := true;
+    repeat
+      QueryParams := TISCParams.Create(isc_info_svc_to_eof);
+      try
+        SendParams := TISCParams.Create(isc_info_svc_timeout);
+        try
+          QueryParams.Add(isc_info_end);
+          SendParams.AddLength(4);
+          SendParams.AddInt32(FQueryTimeout);
+          SendParams.Add(isc_info_end);
+          InternalQuery(QueryParams, SendParams);
+        finally
+          SendParams.Free;
+        end;
+      finally
+        QueryParams.Free;
+      end;
+
+      CurrPos := 0;
+      NoData := true;
+      TraceMsg := '';
+      while CurrPos < FOutputBufferSize do
+      begin
+        CurrByte := byte(FOutputBuffer[CurrPos]);
+        Inc(CurrPos);
+        if CurrByte >= FOutputBufferSize then
+          break;
+        case CurrByte of
+          isc_info_end:
+            break;
+          isc_info_svc_to_eof,
+          isc_info_svc_line:
+          begin
+            if CurrByte = isc_info_svc_to_eof then
+              IgnoreTruncation := true;
+            CurrLen := isc_vax_integer(PChar(@FOutputBuffer[CurrPos]), sizeof(CurrLen));
+            Inc(CurrPos, sizeof(CurrLen));
+            NoData := CurrLen = 0;
+            if not NoData then
+            begin
+              if CurrByte < FOutputBufferSize then
+              begin
+                TraceMessageLength := Length(TraceMsg);
+                SetLength(TraceMsg, TraceMessageLength + CurrLen);
+                for j := 0 to CurrLen - 1 do
+                  TraceMsg[TraceMessageLength + j + 1] := FOutputBuffer[CurrPos + j];
+              end;
+              Inc(CurrPos, CurrLen);
+            end;
+          end;
+          isc_info_truncated:
+            if not IgnoreTruncation then
+              break;
+          isc_info_svc_timeout,
+          isc_info_data_not_ready:
+            NoData := false;
+          else
+            IBError(ibxeOutputParsingError, [nil]);
+        end;
+      end;
+      ProcessTraceMessage(TraceMsg);
+      SetLength(TraceMsg, 0);
+    until NoData or Terminated;
+    ProcessTraceMessage(Format(
+      'Trace session %d finished (NoData: %d; Terminated: %d)',
+      [FSessionId, byte(NoData), byte(Terminated)]));
+
+  except
+    on E: Exception do
+    begin
+      FLastException := E;
+      Synchronize(@DoExceptionOccurred);
+    end;
+  end;
+end;
+
+function TFBTraceService.PopTraceEvent(var TraceEvent: TFBTraceEvent): boolean;
+begin
+  FAccess.Enter;
+  try
+    TraceEvent := TFBTraceEvent(FMessagesQueue.Pop);
+  finally
+    FAccess.Leave;
+  end;
+  Result := TraceEvent <> nil;
+end;
+
+procedure TFBTraceService.PushTraceEvent(const TraceEvent: TFBTraceEvent);
+var
+  ToDelete: TFBTraceEvent;
+begin
+  FAccess.Enter;
+  try
+    while FMessagesQueue.Count >= MaxMessagesInQueue do
+    begin
+      ToDelete := TFBTraceEvent(FMessagesQueue.Pop);
+      ToDelete.Free;
+    end;
+    FMessagesQueue.Push(TraceEvent);
+  finally
+    FAccess.Leave;
+  end;
+end;
+
+
+end.

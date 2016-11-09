@@ -1,0 +1,11 @@
+2013-06-20T13:55:51.3610 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) FREE_STATEMENT

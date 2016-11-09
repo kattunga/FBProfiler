@@ -1,0 +1,294 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tfrmabout.btnclose.caption
+msgid "Close"
+msgstr ""
+
+#: tfrmabout.caption
+msgid "About"
+msgstr ""
+
+#: tfrmabout.lblbelairlink.caption
+msgid "http://www.belair-info.fr"
+msgstr ""
+
+#: tfrmedittrace.btncancel.caption
+msgctxt "TFRMEDITTRACE.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr ""
+
+#: tfrmedittrace.btnok.caption
+msgctxt "TFRMEDITTRACE.BTNOK.CAPTION"
+msgid "OK"
+msgstr ""
+
+#: tfrmedittrace.btnsaveconf.caption
+msgid "Save..."
+msgstr ""
+
+#: tfrmedittrace.caption
+msgid "Trace configuration"
+msgstr ""
+
+#: tfrmedittrace.edtdatabasefilter.editlabel.caption
+msgid "Database filter (you should provide full path to database or leave it empty to watch all databases)"
+msgstr ""
+
+#: tfrmedittrace.edthost.editlabel.caption
+msgid "Host"
+msgstr ""
+
+#: tfrmedittrace.edtpassword.editlabel.caption
+msgid "Password"
+msgstr ""
+
+#: tfrmedittrace.edttracename.editlabel.caption
+msgid "Trace name"
+msgstr ""
+
+#: tfrmedittrace.edtuser.editlabel.caption
+msgid "User name"
+msgstr ""
+
+#: tfrmedittrace.label1.caption
+msgid "Port"
+msgstr ""
+
+#: tfrmmain.actioncleartrace.caption
+msgid "Clear trace"
+msgstr ""
+
+#: tfrmmain.actioncleartrace.hint
+msgid "Clear current trace data"
+msgstr ""
+
+#: tfrmmain.actionfileexit.caption
+msgid "E&xit"
+msgstr ""
+
+#: tfrmmain.actionfileexit.hint
+msgid "Exit"
+msgstr ""
+
+#: tfrmmain.actionfind.caption
+msgid "Find..."
+msgstr ""
+
+#: tfrmmain.actionfindnext.caption
+msgid "Find next"
+msgstr ""
+
+#: tfrmmain.actionhelpabout.caption
+msgid "About..."
+msgstr ""
+
+#: tfrmmain.actionloadtrace.caption
+msgid "Load trace..."
+msgstr ""
+
+#: tfrmmain.actionloadtrace.hint
+msgid "Load trace from package"
+msgstr ""
+
+#: tfrmmain.actionnewtrace.caption
+msgid "New trace..."
+msgstr ""
+
+#: tfrmmain.actionnewtrace.hint
+msgid "Create new trace"
+msgstr ""
+
+#: tfrmmain.actionopentraceconf.caption
+msgid "&Open trace config..."
+msgstr ""
+
+#: tfrmmain.actionopentraceconf.hint
+msgid "Open trace configuration"
+msgstr ""
+
+#: tfrmmain.actionsavetrace.caption
+msgid "Save trace..."
+msgstr ""
+
+#: tfrmmain.actionsavetrace.hint
+msgid "Save current trace to package"
+msgstr ""
+
+#: tfrmmain.actionstarttrace.caption
+msgid "Start trace"
+msgstr ""
+
+#: tfrmmain.actionstarttrace.hint
+msgid "Start current trace again"
+msgstr ""
+
+#: tfrmmain.actionstoptrace.caption
+msgid "Stop trace"
+msgstr ""
+
+#: tfrmmain.actionstoptrace.hint
+msgid "Stop current trace"
+msgstr ""
+
+#: tfrmmain.caption
+msgid "Firebird profiler"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[0].title.caption
+msgid "#"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[10].title.caption
+msgid "Records"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[1].title.caption
+msgid "Session"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[2].title.caption
+msgid "Timestamp"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[3].title.caption
+msgid "Event type"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[4].title.caption
+msgid "Application"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[5].title.caption
+msgid "Duration"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[6].title.caption
+msgid "Reads"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[7].title.caption
+msgid "Writes"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[8].title.caption
+msgid "Fetches"
+msgstr ""
+
+#: tfrmmain.dbgtraces.columns[9].title.caption
+msgid "Marks"
+msgstr ""
+
+#: tfrmmain.menuitem12.caption
+msgctxt "TFRMMAIN.MENUITEM12.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.menuitem13.caption
+msgid "Search"
+msgstr ""
+
+#: tfrmmain.menuitem3.caption
+msgctxt "tfrmmain.menuitem3.caption"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.menuitem8.caption
+msgctxt "TFRMMAIN.MENUITEM8.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.menuitemfile.caption
+msgid "File"
+msgstr ""
+
+#: tfrmmain.menuitemhelp.caption
+msgid "Help"
+msgstr ""
+
+#: tfrmmain.tabplan.caption
+msgid "Plan"
+msgstr ""
+
+#: tfrmmain.tabraw.caption
+msgid "Raw"
+msgstr ""
+
+#: tfrmmain.tabsql.caption
+msgctxt "tfrmmain.tabsql.caption"
+msgid "SQL"
+msgstr ""
+
+#: tfrmmain.toolbarmain.caption
+msgid "ToolBarMain"
+msgstr ""
+
+#: tfrmmain.toolbutton3.caption
+msgid "ToolButton3"
+msgstr ""
+
+#: tfrmmain.toolbutton6.caption
+msgid "ToolButton6"
+msgstr ""
+
+#: tfrmsavetrace.btncancel.caption
+msgctxt "TFRMSAVETRACE.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr ""
+
+#: tfrmsavetrace.btnok.caption
+msgctxt "TFRMSAVETRACE.BTNOK.CAPTION"
+msgid "OK"
+msgstr ""
+
+#: tfrmsavetrace.btnselectdir.caption
+msgid "..."
+msgstr ""
+
+#: tfrmsavetrace.caption
+msgid "Save trace to package"
+msgstr ""
+
+#: tfrmsavetrace.edtpackage.editlabel.caption
+msgid "Package file name"
+msgstr ""
+
+#: tfrmsavetrace.edttargetdir.editlabel.caption
+msgid "Target directory"
+msgstr ""
+
+#: tfrmsearchtrace.actionok.caption
+msgctxt "tfrmsearchtrace.actionok.caption"
+msgid "OK"
+msgstr ""
+
+#: tfrmsearchtrace.btncancel.caption
+msgctxt "tfrmsearchtrace.btncancel.caption"
+msgid "Cancel"
+msgstr ""
+
+#: tfrmsearchtrace.caption
+msgid "Find"
+msgstr ""
+
+#: tfrmsearchtrace.chkduration.caption
+msgid "Duration, msec"
+msgstr ""
+
+#: tfrmsearchtrace.chkplan.caption
+msgid "Query plan contains"
+msgstr ""
+
+#: tfrmsearchtrace.chksql.caption
+msgctxt "TFRMSEARCHTRACE.CHKSQL.CAPTION"
+msgid "SQL contains"
+msgstr ""
+
+#: tfrmsearchtrace.label1.caption
+msgid "Min"
+msgstr ""
+
+#: tfrmsearchtrace.label2.caption
+msgid "Max"
+msgstr ""
+

@@ -1,0 +1,89 @@
+$constraint_name = ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (C NATURAL, R INDEX (RDB$INDEX_12), I INDEX (RDB$INDEX_6)))
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 52:
+-------------------------------------------------------------------------------
+select r.rdb$constraint_name, i.rdb$field_name, r.rdb$index_name from rdb$relation_constraints r, rdb$index_segments i where r.rdb$relation_name=? and r.rdb$index_name=i.rdb$index_name and (r.rdb$constraint_type='PRIMARY KEY') order by r.rdb$constraint_name, i.rdb$field_position
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (R INDEX (RDB$INDEX_42), I INDEX (RDB$INDEX_6)))
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 49:
+-------------------------------------------------------------------------------
+select r.rdb$field_name, r.rdb$null_flag, r.rdb$field_source,  l.rdb$collation_name,f.rdb$computed_source,r.rdb$default_source from rdb$fields f join rdb$relation_fields r      on f.rdb$field_name=r.rdb$field_source left outer join rdb$collations l      on l.rdb$collation_id = r.rdb$collation_id ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (SORT (JOIN (R INDEX (RDB$INDEX_4), F INDEX (RDB$INDEX_2))), L INDEX (RDB$INDEX_26))
+
+2013-06-20T13:55:51.3710 (1252:012BCA44) COMMIT_TRANSACTION
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+      0 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2013-06-20T13:55:51.3810 (1252:012BCA44) START_TRANSACTION
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_37, CONCURRENCY | WAIT | READ_WRITE)
+
+2013-06-20T13:55:51.3810 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_37, CONCURRENCY | WAIT | READ_WRITE)
+
+Statement 57:
+-------------------------------------------------------------------------------
+SELECT a.OBJ_ID, a.OBJ_TYPE, a.OBJ_NAME
+FROM BAI_UPDATE a
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (A NATURAL)
+      0 ms
+
+2013-06-20T13:55:51.3810 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_37, CONCURRENCY | WAIT | READ_WRITE)
+
+Statement 57:
+-------------------------------------------------------------------------------
+SELECT a.OBJ_ID, a.OBJ_TYPE, a.OBJ_NAME
+FROM BAI_UPDATE a
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (A NATURAL)
+
+2013-06-20T13:55:51.3810 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_37, CONCURRENCY | WAIT | READ_WRITE)
+
+Statement 57:
+-------------------------------------------------------------------------------
+SELECT a.OBJ_ID, a.OBJ_TYPE, a.OBJ_NAME
+FROM BAI_UPDATE a
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (A NATURAL)
+2 records fetched
+      0 ms, 7 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+BAI_UPDATE                              2                                                                      
+
+2013-06-20T13:55:51.3910 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 57:
+-------------------------------------------------------------------------------
+SELECT a.OBJ_ID, a.OBJ_TYPE, a.OBJ_NAME
+FROM BAI_UPDATE a
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (A NATURAL)
+

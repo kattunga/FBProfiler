@@ -1,0 +1,30 @@
+2013-06-20T13:56:31.9890 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 58:
+-------------------------------------------------------------------------------
+INSERT INTO BAI_UPDATE (OBJ_ID, OBJ_TYPE, OBJ_NAME)
+ VALUES (
+11, 
+1, 
+'obj name '' déjà'
+)
+
+2013-06-20T13:56:32.0190 (1252:012BCA44) ROLLBACK_TRANSACTION
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_38, CONCURRENCY | WAIT | READ_WRITE)
+     24 ms, 7 write(s), 16 fetch(es), 5 mark(s)
+
+
+2013-06-20T13:56:37.2670 (1252:012BCA44) DETACH_DATABASE
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+2013-06-20T13:56:37.2670 (1252:012BCA44) TRACE_FINI
+	SESSION_35 new_trace_1
+	
+
+
+Trace session -1 finished (NoData: 0; Terminated: 1)

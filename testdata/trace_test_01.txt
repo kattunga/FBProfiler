@@ -1,0 +1,616 @@
+2013-06-20T13:55:41.0660 (1252:012BDEB0) TRACE_INIT
+	SESSION_35 new_trace_1
+	
+
+2013-06-20T13:55:41.0660 (1252:012BDEB0) START_TRANSACTION
+	C:\PROGRAM FILES\FIREBIRD\FIREBIRD_2_5\SECURITY2.FDB (ATT_489, SYSDBA:NONE, NONE, <internal>)
+		(TRA_1446, CONCURRENCY | WAIT | READ_ONLY)
+
+2013-06-20T13:55:41.0660 (1252:012BDEB0) EXECUTE_BLR
+	C:\PROGRAM FILES\FIREBIRD\FIREBIRD_2_5\SECURITY2.FDB (ATT_489, SYSDBA:NONE, NONE, <internal>)
+		(TRA_1446, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 28:
+      20 ms, 4 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$USERS                                         1                                                            
+
+2013-06-20T13:55:41.0660 (1252:012BDEB0) ROLLBACK_TRANSACTION
+	C:\PROGRAM FILES\FIREBIRD\FIREBIRD_2_5\SECURITY2.FDB (ATT_489, SYSDBA:NONE, NONE, <internal>)
+		(TRA_1446, CONCURRENCY | WAIT | READ_ONLY)
+      10 ms, 1 write(s), 1 fetch(es), 1 mark(s)
+
+2013-06-20T13:55:41.0660 (1252:012BCA44) TRACE_INIT
+	SESSION_35 new_trace_1
+	
+
+2013-06-20T13:55:41.0660 (1252:012BCA44) ATTACH_DATABASE
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+2013-06-20T13:55:41.0660 (1252:012BCA44) START_TRANSACTION
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+2013-06-20T13:55:41.0660 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 36:
+-------------------------------------------------------------------------------
+select rdb$character_set_name from rdb$database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$DATABASE NATURAL)
+      1 ms
+
+2013-06-20T13:55:41.0660 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 36:
+-------------------------------------------------------------------------------
+select rdb$character_set_name from rdb$database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$DATABASE NATURAL)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 36:
+-------------------------------------------------------------------------------
+select rdb$character_set_name from rdb$database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$DATABASE NATURAL)
+1 records fetched
+      0 ms, 13 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$DATABASE                            1                                                                      
+RDB$CHARACTER_SETS                                1                                                            
+RDB$COLLATIONS                                    1                                                            
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 37:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 0 or rr.RDB$SYSTEM_FLAG is null)  and rr.RDB$VIEW_SOURCE is null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+      0 ms
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 37:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 0 or rr.RDB$SYSTEM_FLAG is null)  and rr.RDB$VIEW_SOURCE is null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 37:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 0 or rr.RDB$SYSTEM_FLAG is null)  and rr.RDB$VIEW_SOURCE is null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+3 records fetched
+      0 ms, 137 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$RELATIONS                                    45                                                            
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 37:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 0 or rr.RDB$SYSTEM_FLAG is null)  and rr.RDB$VIEW_SOURCE is null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 39:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 1)  and rr.RDB$VIEW_SOURCE is null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+      0 ms
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 39:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 1)  and rr.RDB$VIEW_SOURCE is null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 39:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 1)  and rr.RDB$VIEW_SOURCE is null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+42 records fetched
+      0 ms, 137 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$RELATIONS                                    45                                                            
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 39:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 1)  and rr.RDB$VIEW_SOURCE is null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 40:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 0 or rr.RDB$SYSTEM_FLAG is null)  and rr.RDB$VIEW_SOURCE is not null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+      0 ms
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 40:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 0 or rr.RDB$SYSTEM_FLAG is null)  and rr.RDB$VIEW_SOURCE is not null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 40:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 0 or rr.RDB$SYSTEM_FLAG is null)  and rr.RDB$VIEW_SOURCE is not null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+0 records fetched
+      0 ms, 137 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$RELATIONS                                    45                                                            
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 40:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 0 or rr.RDB$SYSTEM_FLAG is null)  and rr.RDB$VIEW_SOURCE is not null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 41:
+-------------------------------------------------------------------------------
+select pp.rdb$PROCEDURE_name from rdb$procedures pp  where (pp.RDB$SYSTEM_FLAG = 0 or pp.RDB$SYSTEM_FLAG is null) order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (PP ORDER RDB$INDEX_21)
+      0 ms
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 41:
+-------------------------------------------------------------------------------
+select pp.rdb$PROCEDURE_name from rdb$procedures pp  where (pp.RDB$SYSTEM_FLAG = 0 or pp.RDB$SYSTEM_FLAG is null) order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (PP ORDER RDB$INDEX_21)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 41:
+-------------------------------------------------------------------------------
+select pp.rdb$PROCEDURE_name from rdb$procedures pp  where (pp.RDB$SYSTEM_FLAG = 0 or pp.RDB$SYSTEM_FLAG is null) order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (PP ORDER RDB$INDEX_21)
+0 records fetched
+      0 ms, 1 read(s), 2 fetch(es)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 41:
+-------------------------------------------------------------------------------
+select pp.rdb$PROCEDURE_name from rdb$procedures pp  where (pp.RDB$SYSTEM_FLAG = 0 or pp.RDB$SYSTEM_FLAG is null) order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (PP ORDER RDB$INDEX_21)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 42:
+-------------------------------------------------------------------------------
+select RDB$TRIGGER_NAME from RDB$TRIGGERS where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$TRIGGERS ORDER RDB$INDEX_8)
+      0 ms
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 42:
+-------------------------------------------------------------------------------
+select RDB$TRIGGER_NAME from RDB$TRIGGERS where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$TRIGGERS ORDER RDB$INDEX_8)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 42:
+-------------------------------------------------------------------------------
+select RDB$TRIGGER_NAME from RDB$TRIGGERS where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$TRIGGERS ORDER RDB$INDEX_8)
+1 records fetched
+      0 ms, 110 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$TRIGGERS                                     36                                                            
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 42:
+-------------------------------------------------------------------------------
+select RDB$TRIGGER_NAME from RDB$TRIGGERS where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$TRIGGERS ORDER RDB$INDEX_8)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 43:
+-------------------------------------------------------------------------------
+select RDB$ROLE_NAME from RDB$ROLES ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$ROLES ORDER RDB$INDEX_39)
+      0 ms
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 43:
+-------------------------------------------------------------------------------
+select RDB$ROLE_NAME from RDB$ROLES ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$ROLES ORDER RDB$INDEX_39)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 43:
+-------------------------------------------------------------------------------
+select RDB$ROLE_NAME from RDB$ROLES ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$ROLES ORDER RDB$INDEX_39)
+1 records fetched
+      0 ms, 5 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$ROLES                                         1                                                            
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 43:
+-------------------------------------------------------------------------------
+select RDB$ROLE_NAME from RDB$ROLES ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$ROLES ORDER RDB$INDEX_39)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 45:
+-------------------------------------------------------------------------------
+select f.rdb$field_name from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name not starting with 'RDB$' order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F ORDER RDB$INDEX_2, T NATURAL)
+      0 ms
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 45:
+-------------------------------------------------------------------------------
+select f.rdb$field_name from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name not starting with 'RDB$' order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F ORDER RDB$INDEX_2, T NATURAL)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 45:
+-------------------------------------------------------------------------------
+select f.rdb$field_name from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name not starting with 'RDB$' order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F ORDER RDB$INDEX_2, T NATURAL)
+0 records fetched
+      0 ms, 400 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$FIELDS                                      130                                                            
+RDB$CHARACTER_SETS                                1                                                            
+RDB$COLLATIONS                                    1                                                            
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 45:
+-------------------------------------------------------------------------------
+select f.rdb$field_name from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name not starting with 'RDB$' order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F ORDER RDB$INDEX_2, T NATURAL)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 46:
+-------------------------------------------------------------------------------
+select RDB$FUNCTION_NAME from RDB$FUNCTIONS where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$FUNCTIONS ORDER RDB$INDEX_9)
+      0 ms
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 36:
+-------------------------------------------------------------------------------
+select rdb$character_set_name from rdb$database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$DATABASE NATURAL)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 36:
+-------------------------------------------------------------------------------
+select rdb$character_set_name from rdb$database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$DATABASE NATURAL)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 46:
+-------------------------------------------------------------------------------
+select RDB$FUNCTION_NAME from RDB$FUNCTIONS where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$FUNCTIONS ORDER RDB$INDEX_9)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 46:
+-------------------------------------------------------------------------------
+select RDB$FUNCTION_NAME from RDB$FUNCTIONS where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$FUNCTIONS ORDER RDB$INDEX_9)
+0 records fetched
+      0 ms, 1 read(s), 8 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$FUNCTIONS                                     2                                                            
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 46:
+-------------------------------------------------------------------------------
+select RDB$FUNCTION_NAME from RDB$FUNCTIONS where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$FUNCTIONS ORDER RDB$INDEX_9)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 47:
+-------------------------------------------------------------------------------
+select rdb$generator_name from rdb$generators where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$GENERATORS ORDER RDB$INDEX_11)
+      0 ms
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 37:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 0 or rr.RDB$SYSTEM_FLAG is null)  and rr.RDB$VIEW_SOURCE is null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 47:
+-------------------------------------------------------------------------------
+select rdb$generator_name from rdb$generators where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$GENERATORS ORDER RDB$INDEX_11)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 47:
+-------------------------------------------------------------------------------
+select rdb$generator_name from rdb$generators where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$GENERATORS ORDER RDB$INDEX_11)
+1 records fetched
+      0 ms, 1 read(s), 32 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$GENERATORS                                   10                                                            
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 47:
+-------------------------------------------------------------------------------
+select rdb$generator_name from rdb$generators where (RDB$SYSTEM_FLAG = 0 or RDB$SYSTEM_FLAG is null) ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$GENERATORS ORDER RDB$INDEX_11)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 48:
+-------------------------------------------------------------------------------
+select RDB$EXCEPTION_NAME from RDB$EXCEPTIONS ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$EXCEPTIONS ORDER RDB$INDEX_23)
+      0 ms
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 39:
+-------------------------------------------------------------------------------
+select rr.rdb$relation_name from rdb$relations rr  where (rr.RDB$SYSTEM_FLAG = 1)  and rr.RDB$VIEW_SOURCE is null order by 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RR ORDER RDB$INDEX_0)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 48:
+-------------------------------------------------------------------------------
+select RDB$EXCEPTION_NAME from RDB$EXCEPTIONS ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$EXCEPTIONS ORDER RDB$INDEX_23)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_35, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 48:
+-------------------------------------------------------------------------------
+select RDB$EXCEPTION_NAME from RDB$EXCEPTIONS ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$EXCEPTIONS ORDER RDB$INDEX_23)
+0 records fetched
+      0 ms, 1 read(s), 2 fetch(es)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 48:
+-------------------------------------------------------------------------------
+select RDB$EXCEPTION_NAME from RDB$EXCEPTIONS ORDER BY 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN (RDB$EXCEPTIONS ORDER RDB$INDEX_23)
+
+2013-06-20T13:55:41.0760 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program F

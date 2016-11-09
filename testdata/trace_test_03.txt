@@ -1,0 +1,513 @@
+2013-06-20T13:55:51.3610 (1252:012BCA44) START_TRANSACTION
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 49:
+-------------------------------------------------------------------------------
+select r.rdb$field_name, r.rdb$null_flag, r.rdb$field_source,  l.rdb$collation_name,f.rdb$computed_source,r.rdb$default_source from rdb$fields f join rdb$relation_fields r      on f.rdb$field_name=r.rdb$field_source left outer join rdb$collations l      on l.rdb$collation_id = r.rdb$collation_id ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (SORT (JOIN (R INDEX (RDB$INDEX_4), F INDEX (RDB$INDEX_2))), L INDEX (RDB$INDEX_26))
+      0 ms
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 49:
+-------------------------------------------------------------------------------
+select r.rdb$field_name, r.rdb$null_flag, r.rdb$field_source,  l.rdb$collation_name,f.rdb$computed_source,r.rdb$default_source from rdb$fields f join rdb$relation_fields r      on f.rdb$field_name=r.rdb$field_source left outer join rdb$collations l      on l.rdb$collation_id = r.rdb$collation_id ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (SORT (JOIN (R INDEX (RDB$INDEX_4), F INDEX (RDB$INDEX_2))), L INDEX (RDB$INDEX_26))
+
+param0 = char(31), "BAI_UPDATE                     "
+
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 49:
+-------------------------------------------------------------------------------
+select r.rdb$field_name, r.rdb$null_flag, r.rdb$field_source,  l.rdb$collation_name,f.rdb$computed_source,r.rdb$default_source from rdb$fields f join rdb$relation_fields r      on f.rdb$field_name=r.rdb$field_source left outer join rdb$collations l      on l.rdb$collation_id = r.rdb$collation_id ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (SORT (JOIN (R INDEX (RDB$INDEX_4), F INDEX (RDB$INDEX_2))), L INDEX (RDB$INDEX_26))
+
+param0 = char(31), "BAI_UPDATE                     "
+
+3 records fetched
+      0 ms, 1 read(s), 28 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$FIELDS                                        3                                                            
+RDB$RELATION_FIELDS                               3                                                            
+RDB$COLLATIONS                                    1                                                            
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 49:
+-------------------------------------------------------------------------------
+select r.rdb$field_name, r.rdb$null_flag, r.rdb$field_source,  l.rdb$collation_name,f.rdb$computed_source,r.rdb$default_source from rdb$fields f join rdb$relation_fields r      on f.rdb$field_name=r.rdb$field_source left outer join rdb$collations l      on l.rdb$collation_id = r.rdb$collation_id ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (SORT (JOIN (R INDEX (RDB$INDEX_4), F INDEX (RDB$INDEX_2))), L INDEX (RDB$INDEX_26))
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+      0 ms
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+param0 = char(31), "RDB$4227                       "
+
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+param0 = char(31), "RDB$4227                       "
+
+1 records fetched
+      0 ms, 2 read(s), 471 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$FIELDS                                        1                                                            
+RDB$TYPES                             228                                                                      
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+      0 ms
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+param0 = char(31), "RDB$4227                       "
+
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+param0 = char(31), "RDB$4227                       "
+
+1 records fetched
+      0 ms, 8 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$FIELDS                                        1                                                            
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 52:
+-------------------------------------------------------------------------------
+select r.rdb$constraint_name, i.rdb$field_name, r.rdb$index_name from rdb$relation_constraints r, rdb$index_segments i where r.rdb$relation_name=? and r.rdb$index_name=i.rdb$index_name and (r.rdb$constraint_type='PRIMARY KEY') order by r.rdb$constraint_name, i.rdb$field_position
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (R INDEX (RDB$INDEX_42), I INDEX (RDB$INDEX_6)))
+      0 ms
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 52:
+-------------------------------------------------------------------------------
+select r.rdb$constraint_name, i.rdb$field_name, r.rdb$index_name from rdb$relation_constraints r, rdb$index_segments i where r.rdb$relation_name=? and r.rdb$index_name=i.rdb$index_name and (r.rdb$constraint_type='PRIMARY KEY') order by r.rdb$constraint_name, i.rdb$field_position
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (R INDEX (RDB$INDEX_42), I INDEX (RDB$INDEX_6)))
+
+param0 = char(31), "BAI_UPDATE                     "
+
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 52:
+-------------------------------------------------------------------------------
+select r.rdb$constraint_name, i.rdb$field_name, r.rdb$index_name from rdb$relation_constraints r, rdb$index_segments i where r.rdb$relation_name=? and r.rdb$index_name=i.rdb$index_name and (r.rdb$constraint_type='PRIMARY KEY') order by r.rdb$constraint_name, i.rdb$field_position
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (R INDEX (RDB$INDEX_42), I INDEX (RDB$INDEX_6)))
+
+param0 = char(31), "BAI_UPDATE                     "
+
+1 records fetched
+      0 ms, 3 read(s), 8 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$INDEX_SEGMENTS                                1                                                            
+RDB$RELATION_CONSTRAINTS                          1                                                            
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 52:
+-------------------------------------------------------------------------------
+select r.rdb$constraint_name, i.rdb$field_name, r.rdb$index_name from rdb$relation_constraints r, rdb$index_segments i where r.rdb$relation_name=? and r.rdb$index_name=i.rdb$index_name and (r.rdb$constraint_type='PRIMARY KEY') order by r.rdb$constraint_name, i.rdb$field_position
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (R INDEX (RDB$INDEX_42), I INDEX (RDB$INDEX_6)))
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 53:
+-------------------------------------------------------------------------------
+select r.rdb$constraint_name, i.rdb$field_name, c.rdb$update_rule,  c.rdb$delete_rule, c.RDB$CONST_NAME_UQ, r.rdb$index_name from rdb$relation_constraints r, rdb$index_segments i, rdb$ref_constraints c where r.rdb$relation_name=? and r.rdb$index_name=i.rdb$index_name  and r.rdb$constraint_name = ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (C NATURAL, R INDEX (RDB$INDEX_12), I INDEX (RDB$INDEX_6)))
+      0 ms
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) PREPARE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 54:
+-------------------------------------------------------------------------------
+select r.rdb$relation_name, i.rdb$field_name from rdb$relation_constraints r join rdb$index_segments i on i.rdb$index_name = r.rdb$index_name  where r.rdb$constraint_name = ? order by i.rdb$field_position 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (R INDEX (RDB$INDEX_12), I INDEX (RDB$INDEX_6)))
+      0 ms
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 53:
+-------------------------------------------------------------------------------
+select r.rdb$constraint_name, i.rdb$field_name, c.rdb$update_rule,  c.rdb$delete_rule, c.RDB$CONST_NAME_UQ, r.rdb$index_name from rdb$relation_constraints r, rdb$index_segments i, rdb$ref_constraints c where r.rdb$relation_name=? and r.rdb$index_name=i.rdb$index_name  and r.rdb$constraint_name = ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (C NATURAL, R INDEX (RDB$INDEX_12), I INDEX (RDB$INDEX_6)))
+
+param0 = char(31), "BAI_UPDATE                     "
+
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 53:
+-------------------------------------------------------------------------------
+select r.rdb$constraint_name, i.rdb$field_name, c.rdb$update_rule,  c.rdb$delete_rule, c.RDB$CONST_NAME_UQ, r.rdb$index_name from rdb$relation_constraints r, rdb$index_segments i, rdb$ref_constraints c where r.rdb$relation_name=? and r.rdb$index_name=i.rdb$index_name  and r.rdb$constraint_name = ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (C NATURAL, R INDEX (RDB$INDEX_12), I INDEX (RDB$INDEX_6)))
+
+param0 = char(31), "BAI_UPDATE                     "
+
+0 records fetched
+      0 ms, 1 fetch(es)
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 53:
+-------------------------------------------------------------------------------
+select r.rdb$constraint_name, i.rdb$field_name, c.rdb$update_rule,  c.rdb$delete_rule, c.RDB$CONST_NAME_UQ, r.rdb$index_name from rdb$relation_constraints r, rdb$index_segments i, rdb$ref_constraints c where r.rdb$relation_name=? and r.rdb$index_name=i.rdb$index_name  and r.rdb$constraint_name = ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (C NATURAL, R INDEX (RDB$INDEX_12), I INDEX (RDB$INDEX_6)))
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+param0 = char(31), "RDB$4228                       "
+
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+param0 = char(31), "RDB$4228                       "
+
+1 records fetched
+      0 ms, 471 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$FIELDS                                        1                                                            
+RDB$TYPES                             228                                                                      
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+param0 = char(31), "RDB$4228                       "
+
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+param0 = char(31), "RDB$4228                       "
+
+1 records fetched
+      0 ms, 8 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$FIELDS                                        1                                                            
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+param0 = char(31), "RDB$4229                       "
+
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+param0 = char(31), "RDB$4229                       "
+
+1 records fetched
+      0 ms, 471 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$FIELDS                                        1                                                            
+RDB$TYPES                             228                                                                      
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+param0 = char(31), "RDB$4229                       "
+
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+param0 = char(31), "RDB$4229                       "
+
+1 records fetched
+      0 ms, 10 fetch(es)
+
+Table                             Natural     Index    Update    Insert    Delete   Backout     Purge   Expunge
+***************************************************************************************************************
+RDB$FIELDS                                        1                                                            
+RDB$CHARACTER_SETS                                1                                                            
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) CLOSE_CURSOR
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 50:
+-------------------------------------------------------------------------------
+select count(*) from rdb$fields f left outer join rdb$types t on f.rdb$field_type=t.rdb$type where t.rdb$field_name='RDB$FIELD_TYPE' and f.rdb$field_name = ?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (F INDEX (RDB$INDEX_2), T NATURAL)
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 54:
+-------------------------------------------------------------------------------
+select r.rdb$relation_name, i.rdb$field_name from rdb$relation_constraints r join rdb$index_segments i on i.rdb$index_name = r.rdb$index_name  where r.rdb$constraint_name = ? order by i.rdb$field_position 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN SORT (JOIN (R INDEX (RDB$INDEX_12), I INDEX (RDB$INDEX_6)))
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) FREE_STATEMENT
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+
+Statement 53:
+-------------------------------------------------------------------------------
+select r.rdb$constraint_name, i.rdb$field_name, c.rdb$update_rule,  c.rdb$delete_rule, c.RDB$CONST_NAME_UQ, r.rdb$index_name from rdb$relation_constraints r, rdb$index_segments i, rdb$ref_constraints c where r.rdb$relation_name=? and r.rdb$index_name=i.rdb$index_name  and r.rdb

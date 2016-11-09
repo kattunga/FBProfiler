@@ -1,0 +1,15 @@
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_START
+	D:\BELAIR3\APPTEST\APPTEST.GDB (ATT_16, SYSDBA:NONE, ISO88591, TCPv4:127.0.0.1)
+	C:\Program Files\FlameRobin\flamerobin.exe:3784
+		(TRA_36, CONCURRENCY | WAIT | READ_ONLY)
+
+Statement 51:
+-------------------------------------------------------------------------------
+select f.rdb$field_type, f.rdb$field_sub_type, f.rdb$field_length, f.rdb$field_precision, f.rdb$field_scale, c.rdb$character_set_name,  f.rdb$character_length, f.rdb$null_flag, f.rdb$default_source,  l.rdb$collation_name, f.rdb$validation_source, f.rdb$computed_blr,  c.rdb$bytes_per_character  fr...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PLAN JOIN (JOIN (F INDEX (RDB$INDEX_2), C INDEX (RDB$INDEX_25)), L INDEX (RDB$INDEX_26))
+
+param0 = char(31), "RDB$4227                       "
+
+
+2013-06-20T13:55:51.3610 (1252:012BCA44) EXECUTE_STATEMENT_FINISH
