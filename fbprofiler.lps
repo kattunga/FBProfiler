@@ -20,7 +20,6 @@
         <CursorPos Y="222"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="fbservices.pas"/>
@@ -118,6 +117,7 @@
         <Filename Value="license.txt"/>
         <IsPartOfProject Value="True"/>
         <UsageCount Value="23"/>
+        <DefaultSyntaxHighlighter Value="None"/>
       </Unit12>
       <Unit13>
         <Filename Value="ibx/runtime/IB.pas"/>
