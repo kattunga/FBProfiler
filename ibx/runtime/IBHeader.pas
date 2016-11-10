@@ -47,10 +47,10 @@ const
   DSQL_close = 1;
   DSQL_drop = 2;
   {$IFDEF LINUX}
-  FIREBIRD_SO2 = 'libfbembed.so.2.5:libfbembed.so.2.1:libfbclient.so.2';
+  FIREBIRD_SO = 'libfbembed.so.2.5:libfbembed.so.2.1:libfbclient.so.3.0.0:libfbclient.so.2:libfbclient.so';
   {$ENDIF}
   {$IFDEF DARWIN}
-  FIREBIRD_SO2 = 'libfbclient.dylib';
+  FIREBIRD_SO = 'libfbclient.dylib';
   {$ENDIF}
   {$IFDEF WINDOWS}
   IBASE_DLL = 'gds32.dll';

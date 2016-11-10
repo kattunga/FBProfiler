@@ -193,9 +193,11 @@ procedure LoadIBLibrary;
   end;
 {$IFDEF UNIX }
   function FindLibrary(LibNameList: string): TLibHandle;
-  var LibNames: TStringList;
+  var InstallDir: string;
+      LibNames: TStringList;
       i: integer;
   begin
+    InstallDir := ExtractFilePath(Paramstr(0));
     Result := NilHandle;
     LibNames := TStringList.Create;
     try
@@ -204,7 +206,9 @@ procedure LoadIBLibrary;
       LibNames.DelimitedText := LibNameList; {Split list on semi-colon}
       for i := 0 to LibNames.Count - 1 do
       begin
-        Result := LoadLibrary(LibNames[i]);
+        Result := LoadLibrary(InstallDir + LibNames[i]);
+        if Result = NilHandle then
+          Result := LoadLibrary(LibNames[i]);
         if Result <> NilHandle then Exit;
       end;
     finally
@@ -222,7 +226,7 @@ procedure LoadIBLibrary;
       if assigned(OnGetLibraryName) then
         OnGetLibraryName(LibName)
       else
-        LibName := IBLibaryPath;
+        LibName := FIREBIRD_SO;
     end;
     Result := FindLibrary(LibName);
     {$IFDEF DARWIN}
