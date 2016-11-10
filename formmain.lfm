@@ -4,7 +4,7 @@ object FrmMain: TFrmMain
   Top = 168
   Width = 1024
   Caption = 'Firebird profiler'
-  ClientHeight = 613
+  ClientHeight = 610
   ClientWidth = 1024
   Constraints.MinHeight = 480
   Constraints.MinWidth = 640
@@ -15,7 +15,7 @@ object FrmMain: TFrmMain
   SessionProperties = 'Height;Width;Top;Left'
   ShowHint = True
   LCLVersion = '1.6.0.4'
-  WindowState = wsFullScreen
+  WindowState = wsMaximized
   object ToolBarMain: TToolBar
     Left = 0
     Height = 30
@@ -71,8 +71,8 @@ object FrmMain: TFrmMain
   end
   object StatusBarMain: TStatusBar
     Left = 0
-    Height = 23
-    Top = 290
+    Height = 21
+    Top = 289
     Width = 1024
     Panels = <    
       item
@@ -87,7 +87,7 @@ object FrmMain: TFrmMain
     Cursor = crVSplit
     Left = 0
     Height = 5
-    Top = 285
+    Top = 284
     Width = 1024
     Align = alBottom
     Beveled = True
@@ -96,7 +96,7 @@ object FrmMain: TFrmMain
   object PanelDetails: TPanel
     Left = 0
     Height = 300
-    Top = 313
+    Top = 310
     Width = 1024
     Align = alBottom
     BevelOuter = bvNone
@@ -116,13 +116,13 @@ object FrmMain: TFrmMain
       TabPosition = tpBottom
       object TabSQL: TTabSheet
         Caption = 'SQL'
-        ClientHeight = 272
-        ClientWidth = 1016
+        ClientHeight = 269
+        ClientWidth = 1020
         object DBMemoSQL: TDBMemo
           Left = 0
-          Height = 272
+          Height = 269
           Top = 0
-          Width = 1016
+          Width = 1020
           Align = alClient
           Font.Pitch = fpFixed
           ParentFont = False
@@ -164,17 +164,17 @@ object FrmMain: TFrmMain
   end
   object PanelList: TPanel
     Left = 0
-    Height = 255
+    Height = 254
     Top = 30
     Width = 1024
     Align = alClient
     BevelOuter = bvNone
-    ClientHeight = 255
+    ClientHeight = 254
     ClientWidth = 1024
     TabOrder = 4
     object DbgTraces: TDBGrid
       Left = 0
-      Height = 255
+      Height = 254
       Top = 0
       Width = 1024
       Align = alClient
