@@ -164,7 +164,6 @@ procedure isc_decode_timestamp_stub(ib_timestamp     : PISC_TIMESTAMP;
 
 
 var  IBServiceAPIPresent: boolean;
-var  IBLibaryPath: string = FIREBIRD_SO2;
 
 type
   TOnGetLibraryName = procedure(var libname: string);

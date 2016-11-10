@@ -39,10 +39,6 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-#: tfrmedittrace.edtlibpath.editlabel.caption
-msgid "fbclient Library Path"
-msgstr ""
-
 #: tfrmedittrace.edtpassword.editlabel.caption
 msgid "Password"
 msgstr ""

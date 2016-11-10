@@ -40,7 +40,6 @@ type
     BtnSaveConf: TBitBtn;
     BtnCancel: TBitBtn;
     BtnOK: TBitBtn;
-    EdtLibPath: TLabeledEdit;
     edtVersion: TComboBox;
     EdtHost: TLabeledEdit;
     EdtUser: TLabeledEdit;
@@ -107,7 +106,6 @@ begin
   EdtTraceName.Text := FConfig.TraceName;
   EdtHost.Text := FConfig.HostName;
   EdtPort.Value := FConfig.Port;
-  EdtLibPath.Text := FConfig.LibPath;
   i := EdtVersion.Items.IndexOf(FConfig.Version);
   if i >= 0 then
     EdtVersion.ItemIndex := i
@@ -145,7 +143,6 @@ begin
   FConfig.TraceName := EdtTraceName.Text;
   FConfig.HostName := EdtHost.Text;
   FConfig.Port := EdtPort.Value;
-  FConfig.LibPath := EdtLibPath.Text;
   FConfig.Version := EdtVersion.Text;
   FConfig.UserName := EdtUser.Text;
   FConfig.Password := EdtPassword.Text;

@@ -61,7 +61,6 @@ type
   private
     FDatabaseFilter: string;
     FHostName: string;
-    FLibPath: string;
     FParams: TTraceConfigParams;
     FPassword: string;
     FPort: integer;
@@ -78,7 +77,6 @@ type
     procedure MakeTraceName(Counter: integer);
     property DatabaseFilter: string read FDatabaseFilter write FDatabaseFilter;
     property HostName: string read FHostName write SetHostName;
-    property LibPath: string read FLibPath write FLibPath;
     property Params: TTraceConfigParams read FParams;
     property Password: string read FPassword write SetPassword;
     property Port: integer read FPort write SetPort;
@@ -185,7 +183,6 @@ begin
   inherited Create;
   FHostName := 'localhost';
   FPort := FBServices.DefaultPort;
-  FLibPath := '';
   FUserName := 'SYSDBA';
   FPassword := 'masterkey';
   FDatabaseFilter := '';
@@ -336,24 +333,7 @@ end;
 procedure TTraceSession.Start;
 var
   i: integer;
-  Path, libPath: string;
 begin
-
-  if FConfig.LibPath = '' then
-    begin
-      Path := ExtractFilePath(ParamStr(0));
-      libPath := Path+'libfbclient.so.3.0.0';
-      if FileExists(libPath) then
-        IBLibaryPath := libPath;
-      libPath := Path+'libfbclient.so.2';
-      if FileExists(libPath) then
-        IBLibaryPath := libPath;
-      libPath := Path+'libfbclient.so';
-      if FileExists(libPath) then
-        IBLibaryPath := libPath;
-    end
-  else
-    IBLibaryPath := FConfig.LibPath;
 
   if (FTraceService = nil) and not Active then
   begin

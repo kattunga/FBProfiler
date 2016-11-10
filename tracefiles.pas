@@ -82,7 +82,6 @@ begin
     Storage.RootNodePath := TraceConf_RootNodePath;
     Config.HostName := Storage.ReadString('HostName', Config.HostName);
     Config.Port := Storage.ReadInteger('Port', Config.Port);
-    Config.LibPath := Storage.ReadString('LibPath', Config.LibPath);
     Config.Version := Storage.ReadString('Version', Config.Version);
     Config.UserName := Storage.ReadString('UserName', Config.UserName);
     Config.DatabaseFilter := Storage.ReadString('DatabaseFilter', Config.DatabaseFilter);
@@ -106,7 +105,6 @@ begin
     Storage.RootNodePath := TraceConf_RootNodePath;
     Storage.WriteString('HostName', Config.HostName);
     Storage.WriteInteger('Port', Config.Port);
-    Storage.WriteString('LibPath', Config.LibPath);
     Storage.WriteString('Version', Config.Version);
     Storage.WriteString('UserName', Config.UserName);
     Storage.WriteString('DatabaseFilter', Config.DatabaseFilter);

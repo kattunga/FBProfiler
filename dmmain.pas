@@ -222,7 +222,7 @@ begin
       Clear;
       Add('Id', ftInteger, 0, true);
       Add('SessionId', ftInteger, 0, true);
-      Add('EvDate', ftDateTime, 0, true);
+      Add('EvDate', ftString, 24, true);        // bug in fpc 3.0 windows 32 bits //Add('EvDate', ftDateTime, 0, true);
       Add('EvTypeId', ftSmallint, 0, true);
       Add('EvTypeName', ftString, 24, true);
       Add('AppName', ftString, 100, true);
