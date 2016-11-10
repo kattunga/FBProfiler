@@ -9,13 +9,30 @@ msgstr ""
 msgid "About"
 msgstr ""
 
+#: tfrmabout.label1.caption
+msgid "Original Project"
+msgstr ""
+
+#: tfrmabout.label2.caption
+msgid "New version with improvements"
+msgstr ""
+
 #: tfrmabout.lblbelairlink.caption
-msgid "http://www.belair-info.fr"
+msgid "https://sourceforge.net/projects/fbprofiler/"
+msgstr ""
+
+#: tfrmabout.lblbelairlink1.caption
+msgid "https://github.com/kattunga/FBProfiler"
 msgstr ""
 
 #: tfrmedittrace.btncancel.caption
 msgctxt "TFRMEDITTRACE.BTNCANCEL.CAPTION"
 msgid "Cancel"
+msgstr ""
+
+#: tfrmedittrace.btnhelp.caption
+msgctxt "TFRMEDITTRACE.BTNHELP.CAPTION"
+msgid "Help"
 msgstr ""
 
 #: tfrmedittrace.btnok.caption
@@ -52,7 +69,7 @@ msgid "User name"
 msgstr ""
 
 #: tfrmedittrace.edtversion.text
-msgid "3"
+msgid "300"
 msgstr ""
 
 #: tfrmedittrace.label1.caption
@@ -167,6 +184,7 @@ msgid "File"
 msgstr ""
 
 #: tfrmmain.menuitemhelp.caption
+msgctxt "tfrmmain.menuitemhelp.caption"
 msgid "Help"
 msgstr ""
 

@@ -66,7 +66,7 @@ type
     FPort: integer;
     FTraceName: string;
     FUserName: string;
-    FVersion: string;
+    FVersion: integer;
     procedure SetHostName(AValue: string);
     procedure SetPassword(AValue: string);
     procedure SetPort(AValue: integer);
@@ -82,7 +82,7 @@ type
     property Port: integer read FPort write SetPort;
     property TraceName: string read FTraceName write FTraceName;
     property UserName: string read FUserName write SetUserName;
-    property Version: string read FVersion write FVersion;
+    property Version: integer read FVersion write FVersion;
   end;
 
   { TTraceSession }
@@ -186,10 +186,10 @@ begin
   FUserName := 'SYSDBA';
   FPassword := 'masterkey';
   FDatabaseFilter := '';
-  FVersion := '3';
+  FVersion := 300;
   FParams := TTraceConfigParams.Create;
-//  FParams.Add(TTraceConfigParam.Create('include_filter', '', ptString));
-//  FParams.Add(TTraceConfigParam.Create('exclude_filter', '', ptString));
+  FParams.Add(TTraceConfigParam.Create('include_filter', '', ptString));
+  FParams.Add(TTraceConfigParam.Create('exclude_filter', '', ptString));
   FParams.Add(TTraceConfigParam.Create('log_connections', 'false', ptBoolean));
   FParams.Add(TTraceConfigParam.Create('connection_id', '0', ptInteger));
   FParams.Add(TTraceConfigParam.Create('log_transactions', 'false', ptBoolean));
@@ -359,8 +359,9 @@ begin
         IfThen(FConfig.Password = '', 'blank password', 'password specified')]);
       FTraceService.Protocol := TCP;
       FTraceService.Configuration.Clear;
+      FTraceService.Version := FConfig.Version;
 
-      if FConfig.Version = '3' then
+      if FConfig.Version >= 300 then
         begin
 
           if FConfig.DatabaseFilter <> '' then
@@ -369,9 +370,11 @@ begin
             FTraceService.Configuration.Add('database');
           FTraceService.Configuration.Add('{');
           FTraceService.Configuration.Add('enabled = true');
-          for i := 0 to FConfig.Params.Count - 1 do
-            FTraceService.Configuration.Add(
-              FConfig.Params[i].Name + ' = ' + FConfig.Params[i].Value);
+          for i := 0 to FConfig.Params.Count - 1 do begin
+            if FConfig.Params[i].Value <> '' then
+              FTraceService.Configuration.Add(
+                FConfig.Params[i].Name + ' = ' + FConfig.Params[i].Value);
+          end;
           FTraceService.Configuration.Add(Format('max_sql_length = %d', [FBServices.DefaultBufferSize div 2]));
           FTraceService.Configuration.Add(Format('max_blr_length = %d', [FBServices.DefaultBufferSize div 2]));
           FTraceService.Configuration.Add(Format('max_dyn_length = %d', [FBServices.DefaultBufferSize div 2]));

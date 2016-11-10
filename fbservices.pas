@@ -112,10 +112,12 @@ type
     procedure CheckServerName;
     procedure GenerateSPB(var SPB: string; var SPBLength: Short);
     function GetSessionId: integer;
+    function GetVersion: integer;
     procedure SetPort(const Value: integer);
     procedure SetProtocol(const Value: TProtocol);
     procedure OutputTraceEvents;
     procedure OutputTraceRawMessage;
+    procedure SetVersion(AValue: integer);
   protected
     procedure Attach;
     procedure Detach;
@@ -140,6 +142,7 @@ type
     property Protocol: TProtocol read FProtocol write SetProtocol default TCP;
     property ServerName: string read FServerName write FServerName;
     property UserName: string read FUserName write FUserName;
+    property Version: integer read GetVersion write SetVersion default 3;
     // Events
     {.$HINT Use messages queue to avoid collisions because of unknown responce delay of event handler}
     property OnTraceEvent: TNotifyFBTraceEvent
@@ -228,6 +231,7 @@ begin
   FHandle := nil;
   FOutputbuffer := nil;
   FParser := TFBTraceMessageParser.Create;
+  FParser.Version := 300;
   FProtocol := TCP;
   CheckIBLoaded;
   FIBLoaded := true;
@@ -319,6 +323,11 @@ begin
   finally
     FAccess.Leave;
   end;
+end;
+
+function TFBTraceService.GetVersion: integer;
+begin
+  Result := FParser.Version;
 end;
 
 procedure TFBTraceService.SetPort(const Value: integer);
@@ -451,6 +460,11 @@ procedure TFBTraceService.OutputTraceRawMessage;
 begin
   if Assigned(OnTraceMessage) then
     FOnTraceMessage(FLastTraceMessage);
+end;
+
+procedure TFBTraceService.SetVersion(AValue: integer);
+begin
+  FParser.Version := Version;
 end;
 
 procedure TFBTraceService.ProcessTraceMessage(const TraceMsg: string);

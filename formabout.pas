@@ -37,10 +37,12 @@ type
 
   TFrmAbout = class(TForm)
     BtnClose: TButton;
-    Image1: TImage;
     Image2: TImage;
-    LblBelairLink: TLabel;
     Info: TStaticText;
+    Label1: TLabel;
+    Label2: TLabel;
+    LblBelairLink: TLabel;
+    LblBelairLink1: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure LblBelairLinkClick(Sender: TObject);
   private
@@ -70,9 +72,7 @@ begin
   VI := GetVersionInfo;
   Info.Caption := Application.Title + LineEnding +
     Format('v.%d.%d.%d build %d',
-           [VI.FileVersion[0], VI.FileVersion[1], VI.FileVersion[2], VI.FileVersion[3]]) + LineEnding +
-    '(c) 2013-2015 Bel Air Informatique' + LineEnding +
-    '(c) 2013-2015 Serguei Tarassov';
+           [VI.FileVersion[0], VI.FileVersion[1], VI.FileVersion[2], VI.FileVersion[3]]) + LineEnding;
 end;
 
 procedure TFrmAbout.LblBelairLinkClick(Sender: TObject);

@@ -40,6 +40,7 @@ type
     BtnSaveConf: TBitBtn;
     BtnCancel: TBitBtn;
     BtnOK: TBitBtn;
+    BtnHelp: TBitBtn;
     edtVersion: TComboBox;
     EdtHost: TLabeledEdit;
     EdtUser: TLabeledEdit;
@@ -51,6 +52,7 @@ type
     EdtTraceName: TLabeledEdit;
     DlgSaveConf: TSaveDialog;
     Label2: TLabel;
+    procedure BtnHelpClick(Sender: TObject);
     procedure BtnOKClick(Sender: TObject);
     procedure BtnSaveConfClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -69,6 +71,7 @@ implementation
 
 uses
   AppServices,
+  LCLIntf,
   TraceFiles;
 
 {$R *.lfm}
@@ -84,6 +87,11 @@ end;
 procedure TFrmEditTrace.BtnOKClick(Sender: TObject);
 begin
   UpdateConfig;
+end;
+
+procedure TFrmEditTrace.BtnHelpClick(Sender: TObject);
+begin
+  OpenURL('https://github.com/kattunga/FBProfiler/wiki');
 end;
 
 procedure TFrmEditTrace.BtnSaveConfClick(Sender: TObject);
@@ -106,7 +114,7 @@ begin
   EdtTraceName.Text := FConfig.TraceName;
   EdtHost.Text := FConfig.HostName;
   EdtPort.Value := FConfig.Port;
-  i := EdtVersion.Items.IndexOf(FConfig.Version);
+  i := EdtVersion.Items.IndexOf(IntToStr(FConfig.Version));
   if i >= 0 then
     EdtVersion.ItemIndex := i
   else
@@ -143,7 +151,7 @@ begin
   FConfig.TraceName := EdtTraceName.Text;
   FConfig.HostName := EdtHost.Text;
   FConfig.Port := EdtPort.Value;
-  FConfig.Version := EdtVersion.Text;
+  FConfig.Version := StrToInt(EdtVersion.Text);
   FConfig.UserName := EdtUser.Text;
   FConfig.Password := EdtPassword.Text;
   FConfig.DatabaseFilter := EdtDatabaseFilter.Text;

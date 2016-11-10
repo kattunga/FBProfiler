@@ -4,7 +4,7 @@ object FrmMain: TFrmMain
   Top = 168
   Width = 1024
   Caption = 'Firebird profiler'
-  ClientHeight = 610
+  ClientHeight = 613
   ClientWidth = 1024
   Constraints.MinHeight = 480
   Constraints.MinWidth = 640
@@ -15,6 +15,7 @@ object FrmMain: TFrmMain
   SessionProperties = 'Height;Width;Top;Left'
   ShowHint = True
   LCLVersion = '1.6.0.4'
+  WindowState = wsFullScreen
   object ToolBarMain: TToolBar
     Left = 0
     Height = 30
@@ -70,8 +71,8 @@ object FrmMain: TFrmMain
   end
   object StatusBarMain: TStatusBar
     Left = 0
-    Height = 21
-    Top = 289
+    Height = 23
+    Top = 290
     Width = 1024
     Panels = <    
       item
@@ -86,7 +87,7 @@ object FrmMain: TFrmMain
     Cursor = crVSplit
     Left = 0
     Height = 5
-    Top = 284
+    Top = 285
     Width = 1024
     Align = alBottom
     Beveled = True
@@ -95,7 +96,7 @@ object FrmMain: TFrmMain
   object PanelDetails: TPanel
     Left = 0
     Height = 300
-    Top = 310
+    Top = 313
     Width = 1024
     Align = alBottom
     BevelOuter = bvNone
@@ -115,13 +116,13 @@ object FrmMain: TFrmMain
       TabPosition = tpBottom
       object TabSQL: TTabSheet
         Caption = 'SQL'
-        ClientHeight = 269
-        ClientWidth = 1020
+        ClientHeight = 272
+        ClientWidth = 1016
         object DBMemoSQL: TDBMemo
           Left = 0
-          Height = 269
+          Height = 272
           Top = 0
-          Width = 1020
+          Width = 1016
           Align = alClient
           Font.Pitch = fpFixed
           ParentFont = False
@@ -163,17 +164,17 @@ object FrmMain: TFrmMain
   end
   object PanelList: TPanel
     Left = 0
-    Height = 254
+    Height = 255
     Top = 30
     Width = 1024
     Align = alClient
     BevelOuter = bvNone
-    ClientHeight = 254
+    ClientHeight = 255
     ClientWidth = 1024
     TabOrder = 4
     object DbgTraces: TDBGrid
       Left = 0
-      Height = 254
+      Height = 255
       Top = 0
       Width = 1024
       Align = alClient
@@ -193,9 +194,13 @@ object FrmMain: TFrmMain
         item
           Title.Alignment = taCenter
           Title.Caption = 'Timestamp'
-          Width = 170
+          Width = 150
           FieldName = 'EvDate'
           DisplayFormat = 'yyyy-mm-dd hh:nn:ss.zzz'
+        end      
+        item
+          Title.Caption = 'Stm #'
+          FieldName = 'Statement'
         end      
         item
           Title.Caption = 'Event type'

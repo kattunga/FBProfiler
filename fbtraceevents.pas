@@ -43,8 +43,12 @@ type
     etRollbackTransaction,
     etPrepareStatement,
     etExecuteBLR, // BLR - Binary Language Representation
+    etExecuteProcedureStart,
+    etExecuteProcedureFinish,
     etExecuteStatementStart,
     etExecuteStatementFinish,
+    etExecuteTriggerStart,
+    etExecuteTriggerFinish,
     etSessionStarted,
     etSessionFinished,
     etTraceFini
@@ -65,8 +69,12 @@ const
     'ROLLBACK_TRANSACTION',
     'PREPARE_STATEMENT',
     'EXECUTE_BLR',
+    'EXECUTE_PROCEDURE_START',
+    'EXECUTE_PROCEDURE_FINISH',
     'EXECUTE_STATEMENT_START',
     'EXECUTE_STATEMENT_FINISH',
+    'EXECUTE_TRIGGER_START',
+    'EXECUTE_TRIGGER_FINISH',
     'SESSION_STARTED',
     'SESSION_FINISHED',
     'TRACE_FINI'
@@ -172,6 +180,7 @@ type
     FSessionName: string;
     FText: string;
     FTruncatedTextLength: integer;
+    FVersion: integer;
     procedure TrucateTextFromBegin(const ToPosNotIncluding: integer);
   public
     constructor Create;
@@ -182,6 +191,7 @@ type
     procedure PopSessionFinished;
     property SessionId: integer read FSessionId;
     property SessionName: string read FSessionName;
+    property Version: integer read FVersion write FVersion;
   end;
 
 implementation
@@ -327,6 +337,7 @@ begin
   FSessionId := -1;
   FText := '';
   FTruncatedTextLength := 0;
+  FVersion := 300;
 end;
 
 destructor TFBTraceMessageParser.Destroy;
@@ -415,7 +426,7 @@ function TFBTraceMessageParser.NextEvent(out TraceEvent: TFBTraceEvent): boolean
         Inc(LineIndex);
       end;
       // Time stats and IO
-      if LineIndex < Event.Lines.Count then
+      if (LineIndex < Event.Lines.Count) then
       begin
         R.Expression := '(\d+)\s+ms';
         if R.Exec(Event.Lines[LineIndex]) then
@@ -472,7 +483,7 @@ function TFBTraceMessageParser.NextEvent(out TraceEvent: TFBTraceEvent): boolean
     end;
   end;
 
-  procedure ExtractStatement(Event: TFBTraceEvent; const FromLine: integer);
+  procedure ExtractStatement_20(Event: TFBTraceEvent; const FromLine: integer);
   var
     i: integer;
     R: TRegExpr;
@@ -493,8 +504,7 @@ function TFBTraceMessageParser.NextEvent(out TraceEvent: TFBTraceEvent): boolean
             Inc(i);
             if i < Event.Lines.Count then
             begin
-              InGetText := (Length(Event.Lines[i]) > 10) and
-                (Copy(Event.Lines[i], 1, 10) = DupeString('-', 10));
+              InGetText := AnsiStartsStr(DupeString('-', 10), Event.Lines[i]);
               if not InGetText then
               begin
                 ExtractTimeAndIO(Event, i);
@@ -505,8 +515,8 @@ function TFBTraceMessageParser.NextEvent(out TraceEvent: TFBTraceEvent): boolean
         end
         else if InGetText then
         begin
-          if (Length(Event.Lines[i]) > 10) and
-            (Copy(Event.Lines[i], 1, 10) = DupeString('^', 10)) then
+          ExtractTimeAndIO(Event, i);
+          if AnsiStartsStr(DupeString('^', 10), Event.Lines[i]) then
           begin
             InGetText := false;
             Inc(i);
@@ -517,6 +527,53 @@ function TFBTraceMessageParser.NextEvent(out TraceEvent: TFBTraceEvent): boolean
             Event.Statement.SQL.Add(Event.Lines[i]);
         end;
         Inc(i);
+      end;
+    finally
+      R.Free;
+    end;
+  end;
+
+  procedure ExtractStatement_30(Event: TFBTraceEvent; const FromLine: integer);
+  var
+    i: integer;
+    R: TRegExpr;
+    InGetPlan: boolean;
+  begin
+    InGetPlan := false;
+    R := CreateRegExpr;
+    try
+      i := FromLine;
+      while i < Event.Lines.Count do
+      begin
+        if Event.Statement.No = -1 then
+        begin
+          R.Expression := RegEx_StatementLine;
+          if R.Exec(Event.Lines[i]) then
+          begin
+            Event.Statement.FNo := StrToInt(R.Match[1]);
+            Inc(i);
+            if i < Event.Lines.Count then
+              if AnsiStartsStr(DupeString('-', 10), Event.Lines[i]) then
+                Inc(i);
+            if i >= Event.Lines.Count then
+              break;
+          end;
+        end;
+        if AnsiStartsStr(DupeString('^', 10), Event.Lines[i]) then
+        begin
+          InGetPlan := true;
+          Inc(i);
+        end
+        else
+        begin
+          if ExtractTimeAndIO(Event, i) then
+            Break;
+          if InGetPlan then
+            Event.Statement.Plan.Add(Event.Lines[i])
+          else if Event.Lines[i] <> '' then
+            Event.Statement.SQL.Add(Event.Lines[i]);
+          Inc(i);
+         end;
       end;
     finally
       R.Free;
@@ -615,11 +672,18 @@ begin
                 ParseTraceInit(TraceEvent);
               etCloseCursor,
               etExecuteBLR,
+              etExecuteProcedureStart,
+              etExecuteProcedureFinish,
               etExecuteStatementStart,
               etExecuteStatementFinish,
+              etExecuteTriggerStart,
+              etExecuteTriggerFinish,
               etFreeStatement,
               etPrepareStatement:
-                ExtractStatement(TraceEvent, TraceEvent.FHeaderLinesCount);
+                if FVersion >= 300 then
+                  ExtractStatement_30(TraceEvent, TraceEvent.FHeaderLinesCount)
+                else
+                  ExtractStatement_20(TraceEvent, TraceEvent.FHeaderLinesCount);
               etCommitTransaction,
               etRollbackTransaction:
                 ExtractTimeAndIO(TraceEvent, TraceEvent.FHeaderLinesCount);

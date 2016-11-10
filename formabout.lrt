@@ -1,3 +1,6 @@
 TFRMABOUT.CAPTION=About
 TFRMABOUT.BTNCLOSE.CAPTION=Close
-TFRMABOUT.LBLBELAIRLINK.CAPTION=http://www.belair-info.fr
+TFRMABOUT.LBLBELAIRLINK.CAPTION=https://sourceforge.net/projects/fbprofiler/
+TFRMABOUT.LABEL1.CAPTION=Original Project
+TFRMABOUT.LBLBELAIRLINK1.CAPTION=https://github.com/kattunga/FBProfiler
+TFRMABOUT.LABEL2.CAPTION=New version with improvements
