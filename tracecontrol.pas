@@ -371,7 +371,7 @@ begin
           FTraceService.Configuration.Add('{');
           FTraceService.Configuration.Add('enabled = true');
           for i := 0 to FConfig.Params.Count - 1 do begin
-            if FConfig.Params[i].Value <> '' then
+            if (FConfig.Params[i].Value <> '') then
               FTraceService.Configuration.Add(
                 FConfig.Params[i].Name + ' = ' + FConfig.Params[i].Value);
           end;
@@ -390,9 +390,11 @@ begin
           else
             FTraceService.Configuration.Add('<database>');
           FTraceService.Configuration.Add('enabled true');
-          for i := 0 to FConfig.Params.Count - 1 do
-            FTraceService.Configuration.Add(
-              FConfig.Params[i].Name + ' ' + FConfig.Params[i].Value);
+          for i := 0 to FConfig.Params.Count - 1 do begin
+            if (FConfig.Params[i].Value <> '') and (FConfig.Params[i].Value <> 'false') and (FConfig.Params[i].Value <> '0') then
+              FTraceService.Configuration.Add(
+                FConfig.Params[i].Name + ' ' + FConfig.Params[i].Value);
+          end;
           FTraceService.Configuration.Add(Format('max_sql_length %d', [FBServices.DefaultBufferSize div 2]));
           FTraceService.Configuration.Add(Format('max_blr_length %d', [FBServices.DefaultBufferSize div 2]));
           FTraceService.Configuration.Add(Format('max_dyn_length %d', [FBServices.DefaultBufferSize div 2]));

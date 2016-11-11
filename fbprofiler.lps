@@ -16,7 +16,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="162"/>
         <CursorPos Y="185"/>
         <UsageCount Value="27"/>
@@ -27,7 +27,7 @@
         <Filename Value="fbservices.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FBServices"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="9"/>
         <TopLine Value="353"/>
         <CursorPos Y="445"/>
         <UsageCount Value="27"/>
@@ -43,9 +43,10 @@
         <Filename Value="tracecontrol.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="TraceControl"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="167"/>
-        <CursorPos Y="186"/>
+        <TopLine Value="187"/>
+        <CursorPos Y="215"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -66,7 +67,7 @@
         <Filename Value="fbtraceevents.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FBTraceEvents"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="526"/>
         <CursorPos X="14" Y="156"/>
         <UsageCount Value="27"/>
@@ -79,7 +80,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="DMMain"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="205"/>
         <CursorPos X="33" Y="225"/>
         <UsageCount Value="27"/>
@@ -138,7 +139,6 @@
       </Unit13>
       <Unit14>
         <Filename Value="ibx/runtime/IBIntf.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <TopLine Value="178"/>
         <CursorPos Y="200"/>
@@ -147,15 +147,14 @@
       </Unit14>
       <Unit15>
         <Filename Value="/usr/share/fpcsrc/3.0.0/rtl/inc/dynlibs.pas"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="25"/>
         <CursorPos X="10" Y="46"/>
         <UsageCount Value="11"/>
-        <Loaded Value="True"/>
       </Unit15>
       <Unit16>
         <Filename Value="ibx/runtime/IBHeader.pas"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="29"/>
         <CursorPos X="106" Y="50"/>
         <UsageCount Value="11"/>
@@ -184,7 +183,7 @@
       </Unit19>
       <Unit20>
         <Filename Value="ibx/runtime/IBExternals.pas"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="123"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
